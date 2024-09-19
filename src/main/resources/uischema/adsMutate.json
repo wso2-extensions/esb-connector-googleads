@@ -1,0 +1,94 @@
+{
+  "connectorName": "googleAds",
+  "operationName": "adsMutate",
+  "title": "Ads Mutate",
+  "help": "Updates ads. Operation statuses are returned. Updating ads is not supported for TextAd, ExpandedDynamicSearchAd, GmailAd and ImageAd.",
+  "elements": [
+    {
+      "type": "attributeGroup",
+      "value": {
+        "groupName": "General",
+        "elements": [
+          {
+            "type": "attribute",
+            "value": {
+              "name": "configRef",
+              "displayName": "Connection",
+              "inputType": "connection",
+              "allowedConnectionTypes": [
+                "googleAds"
+              ],
+              "defaultType": "connection.googleAds",
+              "defaultValue": "",
+              "required": "true",
+              "helpTip": "Connection to be used"
+            }
+          },
+          {
+            "type": "attributeGroup",
+            "value": {
+              "groupName": "Parameters",
+              "elements": [
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "customerId",
+                    "displayName": "Customer Id",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "true",
+                    "helpTip": "The ID of the customer whose ads are being modified."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "operations",
+                    "displayName": "Operations",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "true",
+                    "helpTip": "The list of operations to perform on individual ads."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "partialFailure",
+                    "displayName": "Partial Failure",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "If true, successful operations will be carried out and invalid operations will return errors."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "validateOnly",
+                    "displayName": "Validate Only",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "If true, the request is validated but not executed. Only errors are returned, not results."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "responseContentType",
+                    "displayName": "Response Content Type",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "The response content type setting. Determines whether the mutable resource or just the resource name should be returned post mutation."
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

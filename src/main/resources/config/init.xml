@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ ~  Copyright (c) 2024, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~  WSO2 LLC. licenses this file to you under the Apache License,
+ ~  Version 2.0 (the "License"); you may not use this file except
+ ~  in compliance with the License.
+ ~  You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~  Unless required by applicable law or agreed to in writing,
+ ~  software distributed under the License is distributed on an
+ ~  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~  KIND, either express or implied.  See the License for the
+ ~  specific language governing permissions and limitations
+ ~  under the License.
+-->
+
+<template name="init" onError="fault" xmlns="http://ws.apache.org/ns/synapse">
+    <parameter name="name" description="Unique name to identify the connection by."/>
+    <parameter name="base" description="The service root URL."/>
+    <parameter name="refreshToken" description="The refresh token that can be used to obtain a new access token."/>
+    <parameter name="clientId" description="Client ID of the registered application."/>
+    <parameter name="clientSecret" description="Client secret of the registered application."/>
+    <parameter name="tokenEndpoint" description="An HTTP endpoint that can be uses to obtain an access token."/>
+    <parameter name="developerToken" description="Represents the developer token your the Manager Account."/>
+    <parameter name="loginCustomerId" description="The customer ID of the Manager Account."/>
+    <sequence>
+        <class name="org.wso2.carbon.google.ads.connector.ClientCredentialsAccessTokenHandler"/>
+        <header name="developer-token" expression="$func:developerToken" scope="transport"/>
+        <filter source="boolean($func:loginCustomerId)" regex="true">
+            <then>
+                <header name="login-customer-id" expression="$func:loginCustomerId" scope="transport"/>
+            </then>
+        </filter>
+        <header name="Authorization" expression="fn:concat('Bearer ', $ctx:_OH_INTERNAL_ACCESS_TOKEN_)" scope="transport"/>
+    </sequence>
+</template>
