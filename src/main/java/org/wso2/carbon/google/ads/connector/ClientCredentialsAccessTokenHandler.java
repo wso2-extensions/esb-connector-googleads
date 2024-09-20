@@ -82,10 +82,12 @@ public class ClientCredentialsAccessTokenHandler extends AbstractConnector {
         payloadParametersMap.put(Constants.OAuth2.CLIENT_ID, clientId);
         payloadParametersMap.put(Constants.OAuth2.CLIENT_SECRET, clientSecret);
 
-        Token token = TokenManager.getToken(getTokenKey(connectionName, tokenEndpoint, developerToken, payloadParametersMap));
+        String tokenKey = getTokenKey(connectionName, tokenEndpoint, developerToken, payloadParametersMap);
+
+        Token token = TokenManager.getToken(tokenKey);
         if (token == null || !token.isActive()) {
             if (token != null && !token.isActive()) {
-                TokenManager.removeToken(getTokenKey(connectionName, tokenEndpoint, developerToken, payloadParametersMap));
+                TokenManager.removeToken(tokenKey);
             }
             if (log.isDebugEnabled()) {
                 if (token == null) {
@@ -94,7 +96,7 @@ public class ClientCredentialsAccessTokenHandler extends AbstractConnector {
                     log.debug("Access token is inactive.");
                 }
             }
-            token = getAndAddNewToken(messageContext, connectionName, developerToken, payloadParametersMap, tokenEndpoint);
+            token = getAndAddNewToken(tokenKey, messageContext, payloadParametersMap, tokenEndpoint);
         }
         String accessToken = token.getAccessToken();
         messageContext.setProperty(Constants.PROPERTY_ACCESS_TOKEN, accessToken);
@@ -103,20 +105,16 @@ public class ClientCredentialsAccessTokenHandler extends AbstractConnector {
     /**
      * Function to retrieve access token from the token store or from the token endpoint.
      *
+     * @param tokenKey               The token key
      * @param messageContext         The message context that is generated for processing the message
-     * @param connectionName         The connection name
-     * @param developerToken         The developer token
      * @param payloadParametersMap   The payload parameters map
      * @param tokenEndpoint          The token endpoint
      */
-    protected synchronized Token getAndAddNewToken(MessageContext messageContext, String connectionName, String developerToken,
+    protected synchronized Token getAndAddNewToken(String tokenKey, MessageContext messageContext,
                                                    Map<String, String> payloadParametersMap, String tokenEndpoint) {
 
-        Token token = TokenManager.getToken(getTokenKey(connectionName, tokenEndpoint, developerToken, payloadParametersMap));
-        if (token == null || !token.isActive()) {
-            token = getAccessToken(messageContext, payloadParametersMap, tokenEndpoint);
-            TokenManager.addToken(getTokenKey(connectionName, tokenEndpoint, developerToken, payloadParametersMap), token);
-        }
+        Token token = getAccessToken(messageContext, payloadParametersMap, tokenEndpoint);
+        TokenManager.addToken(tokenKey, token);
         return token;
     }
 
