@@ -1,0 +1,113 @@
+{
+  "connectorName": "googleAds",
+  "connectionName": "googleAds",
+  "title": "Google Ads Connection",
+  "help": "<h1>Google Ads Connection</h1> <b>The Google Ads Connector allows you to access the REST API of Google Ads.</b>",
+  "elements": [
+    {
+      "type": "attribute",
+      "value": {
+        "name": "connectionName",
+        "displayName": "Connection Name",
+        "inputType": "string",
+        "defaultValue": "GOOGLE_AD_NETWORK_CONNECTION_1",
+        "required": "true",
+        "helpTip": "The name for the Google Ads connection.",
+        "validation": "nameWithoutSpecialCharactors"
+      }
+    },
+    {
+      "type": "attributeGroup",
+      "value": {
+        "groupName": "General",
+        "elements": [
+          {
+            "type": "attributeGroup",
+            "value": {
+              "groupName": "Basic",
+              "elements": [
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "base",
+                    "displayName": "Base URL",
+                    "inputType": "string",
+                    "defaultValue": "https://googleads.googleapis.com",
+                    "required": "true",
+                    "helpTip": "The service root URL."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "clientId",
+                    "displayName": "Client ID",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "true",
+                    "helpTip": "Client ID of the registered application."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "clientSecret",
+                    "displayName": "Client Secret",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "true",
+                    "helpTip": "Client secret of the registered application."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "refreshToken",
+                    "displayName": "Refresh Token",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "true",
+                    "helpTip": "The refresh token that can be used to obtain a new access token."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "developerToken",
+                    "displayName": "Developer Token",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "true",
+                    "helpTip": "The developer token for the Google Ads connection."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "loginCustomerId",
+                    "displayName": "Login Customer ID",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "The ID of the Manager Account. Required when using a manager account to access an customer account."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "tokenEndpoint",
+                    "displayName": "Token Endpoint",
+                    "inputType": "string",
+                    "defaultValue": "https://www.googleapis.com/oauth2/v3/token",
+                    "required": "true",
+                    "helpTip": "An HTTP endpoint that can be uses to obtain an access token."
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

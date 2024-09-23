@@ -1,0 +1,17 @@
+{
+    "name": "Google Ads",
+    "owner": "WSO2",
+    "category": "Developer Tools",
+    "documentationUrl": "https://mi.docs.wso2.com/en/latest/reference/connectors/google-ads-connector/google-ads-overview/",
+    "description": "The Google Ads Connector allows you to access the Google Ads API. This lets you create, update, and delete ad campaigns and ads.",
+    "status": "Active",
+    "releases": [
+        {
+            "tagName": "v1.0.0",
+            "products": [
+                "MI 4.3.0"
+            ],
+            "isHidden": false
+        }
+    ]
+}
