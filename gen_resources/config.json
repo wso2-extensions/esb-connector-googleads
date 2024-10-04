@@ -1,0 +1,17 @@
+{
+    "connectors": [
+        {
+            "connectorName": "GoogleAds",
+            "auth": "none",
+            "openapiSpecificationPath": [
+                "./google_ads_open_api.json"
+            ],
+            "project": {
+                "groupId": "org.wso2.carbon.esb.connector",
+                "artifactId": "google.ads",
+                "version": "1.0.0-SNAPSHOT"
+            },
+            "iconFolderPath": ""
+        }
+    ]
+}
