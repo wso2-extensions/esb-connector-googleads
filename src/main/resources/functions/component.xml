@@ -63,5 +63,9 @@
             <file>customAudiencesMutate.xml</file>
             <description>Creates or updates custom audiences. Operation statuses are returned.</description>
         </component>
+        <component name="campaignCriteriaMutate">
+            <file>campaignCriteriaMutate.xml</file>
+            <description>Creates, updates, or removes criteria. Operation statuses are returned.</description>
+        </component>
     </subComponents>
 </component>
