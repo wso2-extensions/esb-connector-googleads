@@ -25,7 +25,7 @@
 
     <groupId>org.wso2.carbon.esb.connector</groupId>
     <artifactId>google.ads</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <name>WSO2 Carbon - Google Ads Connector</name>
     <url>https://wso2.com</url>
