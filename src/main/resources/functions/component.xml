@@ -67,5 +67,13 @@
             <file>campaignCriteriaMutate.xml</file>
             <description>Creates, updates, or removes criteria. Operation statuses are returned.</description>
         </component>
+        <component name="userListsMutate">
+            <file>userListsMutate.xml</file>
+            <description>Creates or updates user lists. Operation statuses are returned.</description>
+        </component>
+        <component name="uploadUserData">
+            <file>uploadUserData.xml</file>
+            <description>Uploads the given user data.</description>
+        </component>
     </subComponents>
 </component>
