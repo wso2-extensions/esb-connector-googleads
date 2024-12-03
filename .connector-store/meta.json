@@ -8,7 +8,7 @@
     "mavenArtifactId": "google.ads",
     "description": "The Google Ads Connector allows you to access the Google Ads API. This lets you create, update, and delete ad campaigns and ads.",
     "status": "Active",
-    "connectorRank": 50,
+    "rank": 50,
     "type": "Connector",
     "releases": [
         {
