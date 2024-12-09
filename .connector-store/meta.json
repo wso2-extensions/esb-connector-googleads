@@ -1,15 +1,98 @@
 {
     "name": "Google Ads",
     "owner": "WSO2",
+    "product": "MI",
     "category": "Sales and Marketing",
     "documentationUrl": "https://mi.docs.wso2.com/en/latest/reference/connectors/google-ads-connector/google-ads-overview/",
+    "mavenGroupId": "org.wso2.integration.connector",
+    "mavenArtifactId": "mi-connector--googleads",
     "description": "The Google Ads Connector allows you to access the Google Ads API. This lets you create, update, and delete ad campaigns and ads.",
     "status": "Active",
+    "rank": 50,
+    "type": "Connector",
     "releases": [
         {
             "tagName": "v1.0.2",
             "products": [
                 "MI 4.3.0"
+            ],
+            "operations":[
+                {
+                    "name":"init",
+                    "description":"Config operation",
+                    "isHidden":true
+                },
+                {
+                    "name":"adGroupAdsMutate",
+                    "description":"Creates, updates, or removes ads. Operation statuses are returned.",
+                    "isHidden":false
+                },
+                {
+                    "name":"adGroupsMutate",
+                    "description":"Creates, updates, or removes ad groups. Operation statuses are returned.",
+                    "isHidden":false
+                },
+                {
+                    "name":"adsMutate",
+                    "description":"Updates ads. Operation statuses are returned. Updating ads is not supported for TextAd, ExpandedDynamicSearchAd, GmailAd and ImageAd.",
+                    "isHidden":false
+                },
+                {
+                    "name":"campaignBudgets",
+                    "description":"Creates, updates, or removes campaign budgets. Operation statuses are returned.",
+                    "isHidden":false
+                },
+                {
+                    "name":"campaignsMutate",
+                    "description":"Creates, updates, or removes campaigns. Operation statuses are returned.",
+                    "isHidden":false
+                },
+                {
+                    "name":"createCustomerClient",
+                    "description":"Creates a new client under manager. The new client customer is returned.",
+                    "isHidden":false
+                },
+                {
+                    "name":"search",
+                    "description":"Returns all rows that match the search query.",
+                    "isHidden":false
+                },
+                {
+                    "name":"customersMutate",
+                    "description":"Updates a customer. Operation statuses are returned.",
+                    "isHidden":false
+                },
+                {
+                    "name":"audiencesMutate",
+                    "description":"Creates audiences. Operation statuses are returned.",
+                    "isHidden":false
+                },
+                {
+                    "name":"customAudiencesMutate",
+                    "description":"Creates or updates custom audiences. Operation statuses are returned.",
+                    "isHidden":false
+                },
+                {
+                    "name":"campaignCriteriaMutate",
+                    "description":"Creates, updates, or removes criteria. Operation statuses are returned.",
+                    "isHidden":false
+                },
+                {
+                    "name":"userListsMutate",
+                    "description":"Creates or updates user lists. Operation statuses are returned.",
+                    "isHidden":false
+                },
+                {
+                    "name":"uploadUserData",
+                    "description":"Uploads the given user data.",
+                    "isHidden":false
+                }
+            ],
+            "connections": [
+                {
+                    "name": "googleAds",
+                    "description": "Connection for interacting with Google Ads."
+                }
             ],
             "isHidden": false
         }
