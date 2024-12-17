@@ -25,7 +25,7 @@
 
     <groupId>org.wso2.integration.connector</groupId>
     <artifactId>mi-connector-googleads</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3-SNAPSHOT</version>
 
     <name>WSO2 Carbon - Google Ads Connector</name>
     <url>https://wso2.com</url>
@@ -55,6 +55,12 @@
             <version>${carbon.mediation.version}</version>
         </dependency>
     </dependencies>
+    <scm>
+        <connection>scm:git:https://github.com/wso2-extensions/esb-connector-googleads.git</connection>
+        <url>https://github.com/wso2-extensions/esb-connector-googleads.git</url>
+        <developerConnection>scm:git:https://github.com/wso2-extensions/esb-connector-googleads</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
     <build>
         <plugins>
             <plugin>
