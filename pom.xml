@@ -19,13 +19,11 @@
 
 <!-- Generated on 23-Fri, 08, 2024 16:11:19+0530 -->
 
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <groupId>org.wso2.integration.connector</groupId>
     <artifactId>mi-connector-googleads</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.3</version>
 
     <name>WSO2 Carbon - Google Ads Connector</name>
     <url>https://wso2.com</url>
@@ -59,7 +57,7 @@
         <connection>scm:git:https://github.com/wso2-extensions/esb-connector-googleads.git</connection>
         <url>https://github.com/wso2-extensions/esb-connector-googleads.git</url>
         <developerConnection>scm:git:https://github.com/wso2-extensions/esb-connector-googleads</developerConnection>
-        <tag>HEAD</tag>
+        <tag>v1.0.3</tag>
     </scm>
     <build>
         <plugins>
