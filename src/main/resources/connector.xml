@@ -25,5 +25,6 @@
         <dependency component="functions"/>
         <description>WSO2 Google Ads Connector Library</description>
     </component>
+    <displayName>Google Ads</displayName>
     <icon>icon/icon-small.png</icon>
 </connector>
