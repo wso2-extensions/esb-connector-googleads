@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ ~  Copyright (c) 2024, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~  WSO2 LLC. licenses this file to you under the Apache License,
+ ~  Version 2.0 (the "License"); you may not use this file except
+ ~  in compliance with the License.
+ ~  You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~  Unless required by applicable law or agreed to in writing,
+ ~  software distributed under the License is distributed on an
+ ~  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~  KIND, either express or implied.  See the License for the
+ ~  specific language governing permissions and limitations
+ ~  under the License.
+-->
+
+<template xmlns="http://ws.apache.org/ns/synapse" name="getCustomers">
+    <!-- Path Parameter List -->
+    <parameter name="customerId" description="Required. The ID of the customer being queried."/>
+    <!-- Request Body Parameter List -->
+    <parameter name="pageToken"
+               description="Token of the page to retrieve. If not specified, the first page of results will be returned. Use the value obtained fromnextPageTokenin the previous response in order to request the next page of results."/>
+    <parameter name="pageSize"
+               description="Number of elements to retrieve in a single page. When too large a page is requested, the server may decide to further limit the number of returned resources."/>
+    <parameter name="validateOnly" description="If true, the request is validated but not executed."/>
+    <parameter name="returnTotalResultsCount"
+               description="If true, the total number of results that match the query ignoring the LIMIT clause will be included in the response. Default is false."/>
+    <parameter name="summaryRowSetting"
+               description="Determines whether a summary row will be returned. By default, summary row is not returned. If requested, the summary row will be sent in a response by itself after all other query results are returned."/>
+    <sequence>
+        <class name="org.wso2.carbon.google.ads.connector.RestURLBuilder">
+            <property name="operationPath" value="/v17/customers/{customerId}/googleAds:search"/>
+            <property name="pathParameters" value="customerId,"/>
+        </class>
+        <payloadFactory media-type="json" template-type="freemarker">
+            <format>
+                <![CDATA[{
+                                                                                        <#if (args.arg1)?has_content>
+                                    "query": "${args.arg1}",                                </#if>
+                                                                                            <#if (args.arg2)?has_content>
+                                    "pageToken": "${args.arg2}",                                </#if>
+                                                                                            <#if (args.arg3)?has_content>
+                                    "pageSize": "${args.arg3}",                                </#if>
+                                                                                            <#if (args.arg4)?has_content>
+                                    "validateOnly": "${args.arg4}",                                </#if>
+                                                                                            <#if (args.arg5)?has_content>
+                                    "returnTotalResultsCount": "${args.arg5}",                                </#if>
+                                                                                            <#if (args.arg6)?has_content>
+                                    "summaryRowSetting": "${args.arg6}"                                </#if>
+                                                                                        }]]>
+            </format>
+            <args>
+                <arg evaluator="xml" value="SELECT customer.id, customer.descriptive_name,
+                customer.status, customer.currency_code, customer.time_zone, customer.tracking_url_template,
+                customer.final_url_suffix FROM customer"/>
+                <arg evaluator="xml" expression="$func:pageToken"/>
+                <arg evaluator="xml" expression="$func:pageSize"/>
+                <arg evaluator="xml" expression="$func:validateOnly"/>
+                <arg evaluator="xml" expression="$func:returnTotalResultsCount"/>
+                <arg evaluator="xml" expression="$func:summaryRowSetting"/>
+            </args>
+        </payloadFactory>
+        <property name="DISABLE_CHUNKING" scope="axis2" type="STRING" value="true"/>
+        <property name="messageType" value="application/json" scope="axis2"/>
+        <property name="ContentType" value="application/json" scope="axis2"/>
+        <header name="Accept" value="application/json" scope="transport" action="set"/>
+        <call>
+            <endpoint>
+                <http method="POST" uri-template="{uri.var.base}{+uri.var.urlPath}{+uri.var.urlQuery}"/>
+            </endpoint>
+        </call>
+        <!-- Remove custom header information -->
+        <header name="request-id" scope="transport" action="remove"/>
+        <header name="x-xss-protection" scope="transport" action="remove"/>
+        <header name="vary" scope="transport" action="remove"/>
+        <header name="alt-svc" scope="transport" action="remove"/>
+        <header name="server" scope="transport" action="remove"/>
+        <header name="access-control-allow-origin" scope="transport" action="remove"/>
+        <header name="access-control-allow-methods" scope="transport" action="remove"/>
+        <header name="x-content-type-options" scope="transport" action="remove"/>
+        <header name="access-control-allow-headers" scope="transport" action="remove"/>
+        <header name="x-frame-options" scope="transport" action="remove"/>
+        <header name="cache-control" scope="transport" action="remove"/>
+    </sequence>
+</template>

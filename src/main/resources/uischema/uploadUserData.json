@@ -43,23 +43,110 @@
                 {
                   "type": "attribute",
                   "value": {
-                    "name": "operations",
-                    "displayName": "Operations",
+                    "name": "userListId",
+                    "displayName": "User List Id",
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "true",
-                    "helpTip": "The list of operations to perform on individual ads."
+                    "helpTip": "Required. The list id of the user list to add or remove users from."
                   }
                 },
                 {
                   "type": "attribute",
                   "value": {
-                    "name": "customerMatchUserListMetadata",
-                    "displayName": "Customer Match User List Metadata",
+                    "name": "dataSourceType",
+                    "displayName": "Data Source Type",
+                    "inputType": "comboOrExpression",
+                    "comboValues": ["From a JSON array", "From a Google Ads API request"],
+                    "defaultValue": "From a JSON array",
+                    "required": "true",
+                    "helpTip": "The type of data source."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "operations",
+                    "displayName": "User List and Operations",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "true",
+                    "enableCondition": [{"dataSourceType":"From a Google Ads API request"}],
+                    "helpTip": "Import the user data and operations to be performed as a JSON object."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "jsonArrayContent",
+                    "displayName": "User List JSON Array Content",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "true",
+                    "enableCondition": [{"dataSourceType":"From a JSON array"}],
+                    "helpTip": "User data to be uploaded."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "operationType",
+                    "displayName": "Operation Type",
+                    "inputType": "comboOrExpression",
+                    "comboValues": ["create", "remove"],
+                    "required": "true",
+                    "defaultValue": "create",
+                    "enableCondition": [{"dataSourceType":"From a JSON array"}],
+                    "helpTip": "The operation to be performed on the user list."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "userIdentifierSource",
+                    "displayName": "User Identifier Source",
+                    "inputType": "comboOrExpression",
+                    "comboValues": ["UNSPECIFIED", "UNKNOWN", "FIRST_PARTY", "THIRD_PARTY"],
+                    "required": "true",
+                    "defaultValue": "UNSPECIFIED",
+                    "helpTip": "The source of the user identifiers.",
+                    "enableCondition": [{"dataSourceType":"From a JSON array"}]
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "transactionAttributes",
+                    "displayName": "Transaction Attributes",
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "false",
-                    "helpTip": "Metadata for data updates to a Customer Match user list."
+                    "helpTip": "The transaction attributes for the user data to be uploaded.",
+                    "enableCondition": [{"dataSourceType":"From a JSON array"}]
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "userAttributes",
+                    "displayName": "User Attributes",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "The user attributes for the user data to be uploaded.",
+                    "enableCondition": [{"dataSourceType":"From a JSON array"}]
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "consent",
+                    "displayName": "Consent",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "The consent for the user data to be uploaded.",
+                    "enableCondition": [{"dataSourceType":"From a JSON array"}]
                   }
                 }
               ]

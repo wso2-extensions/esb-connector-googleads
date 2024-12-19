@@ -1,0 +1,105 @@
+{
+  "connectorName": "googleAds",
+  "operationName": "getCampaigns",
+  "title": "List down all Campaigns",
+  "help": "Returns the campaigns.",
+  "elements": [
+    {
+      "type": "attributeGroup",
+      "value": {
+        "groupName": "General",
+        "elements": [
+          {
+            "type": "attribute",
+            "value": {
+              "name": "configRef",
+              "displayName": "Connection",
+              "inputType": "connection",
+              "allowedConnectionTypes": [
+                "googleAds"
+              ],
+              "defaultType": "connection.googleAds",
+              "defaultValue": "",
+              "required": "true",
+              "helpTip": "Connection to be used"
+            }
+          },
+          {
+            "type": "attributeGroup",
+            "value": {
+              "groupName": "Parameters",
+              "elements": [
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "customerId",
+                    "displayName": "Customer Id",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "true",
+                    "helpTip": "The ID of the customer being queried."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "pageToken",
+                    "displayName": "Page Token",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "Token of the page to retrieve. If not specified, the first page of results will be returned. Use the value obtained from next Page Token in the previous response in order to request the next page of results."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "pageSize",
+                    "displayName": "Page Size",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "Number of elements to retrieve in a single page. When too large a page is requested, the server may decide to further limit the number of returned resources."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "validateOnly",
+                    "displayName": "Validate Only",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "If true, the request is validated but not executed."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "returnTotalResultsCount",
+                    "displayName": "Return Total Results Count",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "If true, the total number of results that match the query ignoring the LIMIT clause will be included in the response. Default is false."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "summaryRowSetting",
+                    "displayName": "Summary Row Setting",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "Determines whether a summary row will be returned. By default, summary row is not returned. If requested, the summary row will be sent in a response by itself after all other query results are returned."
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
