@@ -75,5 +75,17 @@
             <file>uploadUserData.xml</file>
             <description>Uploads the given user data.</description>
         </component>
+        <component name="getCampaigns">
+            <file>getCampaigns.xml</file>
+            <description>Returns all campaigns that match the search query.</description>
+        </component>
+        <component name="getUserLists">
+            <file>getUserLists.xml</file>
+            <description>Returns all user lists that match the search query.</description>
+        </component>
+        <component name="getCustomers">
+            <file>getCustomers.xml</file>
+            <description>Returns all customers that match the search query.</description>
+        </component>
     </subComponents>
 </component>
