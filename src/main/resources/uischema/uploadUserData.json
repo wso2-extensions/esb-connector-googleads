@@ -54,11 +54,11 @@
                 {
                   "type": "attribute",
                   "value": {
-                    "name": "dataSourceType",
+                    "name": "inputStructure",
                     "displayName": "Data Source Type",
                     "inputType": "comboOrExpression",
-                    "comboValues": ["From a JSON array", "From a Google Ads API request"],
-                    "defaultValue": "From a JSON array",
+                    "comboValues": ["JSON_ARRAY", "GOOGLE_API_COMPATIBLE"],
+                    "defaultValue": "JSON_ARRAY",
                     "required": "true",
                     "helpTip": "The type of data source."
                   }
@@ -71,7 +71,7 @@
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "true",
-                    "enableCondition": [{"dataSourceType":"From a Google Ads API request"}],
+                    "enableCondition": [{"inputStructure":"GOOGLE_API_COMPATIBLE"}],
                     "helpTip": "Import the user data and operations to be performed as a JSON object."
                   }
                 },
@@ -83,7 +83,7 @@
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "true",
-                    "enableCondition": [{"dataSourceType":"From a JSON array"}],
+                    "enableCondition": [{"inputStructure":"JSON_ARRAY"}],
                     "helpTip": "User data to be uploaded."
                   }
                 },
@@ -96,7 +96,7 @@
                     "comboValues": ["create", "remove"],
                     "required": "true",
                     "defaultValue": "create",
-                    "enableCondition": [{"dataSourceType":"From a JSON array"}],
+                    "enableCondition": [{"inputStructure":"JSON_ARRAY"}],
                     "helpTip": "The operation to be performed on the user list."
                   }
                 },
@@ -110,7 +110,7 @@
                     "required": "true",
                     "defaultValue": "UNSPECIFIED",
                     "helpTip": "The source of the user identifiers.",
-                    "enableCondition": [{"dataSourceType":"From a JSON array"}]
+                    "enableCondition": [{"inputStructure":"JSON_ARRAY"}]
                   }
                 },
                 {
@@ -122,7 +122,7 @@
                     "defaultValue": "",
                     "required": "false",
                     "helpTip": "The transaction attributes for the user data to be uploaded.",
-                    "enableCondition": [{"dataSourceType":"From a JSON array"}]
+                    "enableCondition": [{"inputStructure":"JSON_ARRAY"}]
                   }
                 },
                 {
@@ -134,7 +134,7 @@
                     "defaultValue": "",
                     "required": "false",
                     "helpTip": "The user attributes for the user data to be uploaded.",
-                    "enableCondition": [{"dataSourceType":"From a JSON array"}]
+                    "enableCondition": [{"inputStructure":"JSON_ARRAY"}]
                   }
                 },
                 {
@@ -146,7 +146,7 @@
                     "defaultValue": "",
                     "required": "false",
                     "helpTip": "The consent for the user data to be uploaded.",
-                    "enableCondition": [{"dataSourceType":"From a JSON array"}]
+                    "enableCondition": [{"inputStructure":"JSON_ARRAY"}]
                   }
                 }
               ]

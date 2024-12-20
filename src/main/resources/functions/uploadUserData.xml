@@ -26,7 +26,7 @@
     <parameter name="operations" description="Required. The list of operations to be done."/>
     <parameter name="userListId"
                description="Required. The ID of the user list to which the data is added or removed."/>
-    <parameter name="dataSourceType" description="The type of data source."/>
+    <parameter name="inputStructure" description="The type of data source."/>
     <parameter name="userListCSVContent" description="User data in CSV format."/>
     <parameter name="operationType" description="The operation to be performed on the user list."/>
     <parameter name="userIdentifierSource" description="The source of the user identifier."/>
@@ -36,7 +36,7 @@
             <property name="operationPath" value="/v17/customers/{customerId}:uploadUserData"/>
             <property name="pathParameters" value="customerId,"/>
         </class>
-        <filter regex="From a JSON array" source="$func:dataSourceType">
+        <filter regex="JSON_ARRAY" source="$func:inputStructure">
             <then>
                 <class name="org.wso2.carbon.google.ads.connector.JSONContentProcessor">
                     <property name="jsonArrayContent" evaluator="xml" expression="$func:jsonArrayContent"/>
