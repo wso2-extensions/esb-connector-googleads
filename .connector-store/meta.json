@@ -83,8 +83,8 @@
                     "isHidden":false
                 },
                 {
-                    "name":"uploadUserData",
-                    "description":"Uploads the given user data.",
+                    "name":"userDataMutate",
+                    "description":"Add or remove users to an user list.",
                     "isHidden":false
                 },
                 {
@@ -268,7 +268,7 @@
                     "isHidden":false
                 },
                 {
-                    "name":"uploadUserData",
+                    "name":"userDataMutate",
                     "description":"Uploads the given user data.",
                     "isHidden":false
                 }
