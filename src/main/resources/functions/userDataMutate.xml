@@ -19,7 +19,7 @@
 
 <!-- Generated on 20-Sun, 10, 2024 20:56:39+0530 -->
 
-<template xmlns="http://ws.apache.org/ns/synapse" name="uploadUserData">
+<template xmlns="http://ws.apache.org/ns/synapse" name="userDataMutate">
     <!-- Path Parameter List -->
     <parameter name="customerId" description="Required. The ID of the customer for which to update the user data."/>
     <!-- Request Body Parameter List -->

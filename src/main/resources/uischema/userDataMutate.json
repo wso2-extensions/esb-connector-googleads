@@ -1,8 +1,8 @@
 {
   "connectorName": "googleAds",
-  "operationName": "uploadUserData",
-  "title": "Customers Upload User Data",
-  "help": "Uploads the given user data..",
+  "operationName": "userDataMutate",
+  "title": "Customers Create/Remove User Data",
+  "help": "Uploads the given user data to create or remove users in user list",
   "elements": [
     {
       "type": "attributeGroup",
@@ -15,9 +15,7 @@
               "name": "configRef",
               "displayName": "Connection",
               "inputType": "connection",
-              "allowedConnectionTypes": [
-                "googleAds"
-              ],
+              "allowedConnectionTypes": ["googleAds"],
               "defaultType": "connection.googleAds",
               "defaultValue": "",
               "required": "true",
@@ -55,12 +53,12 @@
                   "type": "attribute",
                   "value": {
                     "name": "inputStructure",
-                    "displayName": "Data Source Type",
+                    "displayName": "Input Data Structure",
                     "inputType": "comboOrExpression",
                     "comboValues": ["JSON_ARRAY", "GOOGLE_API_COMPATIBLE"],
                     "defaultValue": "JSON_ARRAY",
                     "required": "true",
-                    "helpTip": "The type of data source."
+                    "helpTip": "The type of input data structure."
                   }
                 },
                 {
@@ -71,7 +69,9 @@
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "true",
-                    "enableCondition": [{"inputStructure":"GOOGLE_API_COMPATIBLE"}],
+                    "enableCondition": [
+                      { "inputStructure": "GOOGLE_API_COMPATIBLE" }
+                    ],
                     "helpTip": "Import the user data and operations to be performed as a JSON object."
                   }
                 },
@@ -83,7 +83,7 @@
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "true",
-                    "enableCondition": [{"inputStructure":"JSON_ARRAY"}],
+                    "enableCondition": [{ "inputStructure": "JSON_ARRAY" }],
                     "helpTip": "User data to be uploaded."
                   }
                 },
@@ -96,21 +96,34 @@
                     "comboValues": ["create", "remove"],
                     "required": "true",
                     "defaultValue": "create",
-                    "enableCondition": [{"inputStructure":"JSON_ARRAY"}],
+                    "enableCondition": [{ "inputStructure": "JSON_ARRAY" }],
                     "helpTip": "The operation to be performed on the user list."
                   }
-                },
+                }
+              ]
+            }
+          },
+          {
+            "type": "attributeGroup",
+            "value": {
+              "groupName": "Advanced",
+              "elements": [
                 {
                   "type": "attribute",
                   "value": {
                     "name": "userIdentifierSource",
                     "displayName": "User Identifier Source",
                     "inputType": "comboOrExpression",
-                    "comboValues": ["UNSPECIFIED", "UNKNOWN", "FIRST_PARTY", "THIRD_PARTY"],
+                    "comboValues": [
+                      "UNSPECIFIED",
+                      "UNKNOWN",
+                      "FIRST_PARTY",
+                      "THIRD_PARTY"
+                    ],
                     "required": "true",
                     "defaultValue": "UNSPECIFIED",
                     "helpTip": "The source of the user identifiers.",
-                    "enableCondition": [{"inputStructure":"JSON_ARRAY"}]
+                    "enableCondition": [{ "inputStructure": "JSON_ARRAY" }]
                   }
                 },
                 {
@@ -122,7 +135,7 @@
                     "defaultValue": "",
                     "required": "false",
                     "helpTip": "The transaction attributes for the user data to be uploaded.",
-                    "enableCondition": [{"inputStructure":"JSON_ARRAY"}]
+                    "enableCondition": [{ "inputStructure": "JSON_ARRAY" }]
                   }
                 },
                 {
@@ -134,7 +147,7 @@
                     "defaultValue": "",
                     "required": "false",
                     "helpTip": "The user attributes for the user data to be uploaded.",
-                    "enableCondition": [{"inputStructure":"JSON_ARRAY"}]
+                    "enableCondition": [{ "inputStructure": "JSON_ARRAY" }]
                   }
                 },
                 {
@@ -146,7 +159,7 @@
                     "defaultValue": "",
                     "required": "false",
                     "helpTip": "The consent for the user data to be uploaded.",
-                    "enableCondition": [{"inputStructure":"JSON_ARRAY"}]
+                    "enableCondition": [{ "inputStructure": "JSON_ARRAY" }]
                   }
                 }
               ]

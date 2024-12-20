@@ -71,8 +71,8 @@
             <file>userListsMutate.xml</file>
             <description>Creates or updates user lists. Operation statuses are returned.</description>
         </component>
-        <component name="uploadUserData">
-            <file>uploadUserData.xml</file>
+        <component name="userDataMutate">
+            <file>userDataMutate.xml</file>
             <description>Uploads the given user data.</description>
         </component>
         <component name="getCampaigns">
