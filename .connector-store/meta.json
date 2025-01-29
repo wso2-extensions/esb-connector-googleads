@@ -14,93 +14,94 @@
         {
             "tagName": "v1.1.0",
             "products": [
+                "MI 4.4.0",
                 "MI 4.3.0"
             ],
-            "operations":[
+            "operations": [
                 {
-                    "name":"init",
-                    "description":"Config operation",
-                    "isHidden":true
+                    "name": "init",
+                    "description": "Config operation",
+                    "isHidden": true
                 },
                 {
-                    "name":"adGroupAdsMutate",
-                    "description":"Creates, updates, or removes ads. Operation statuses are returned.",
-                    "isHidden":false
+                    "name": "adGroupAdsMutate",
+                    "description": "Creates, updates, or removes ads. Operation statuses are returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"adGroupsMutate",
-                    "description":"Creates, updates, or removes ad groups. Operation statuses are returned.",
-                    "isHidden":false
+                    "name": "adGroupsMutate",
+                    "description": "Creates, updates, or removes ad groups. Operation statuses are returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"adsMutate",
-                    "description":"Updates ads. Operation statuses are returned. Updating ads is not supported for TextAd, ExpandedDynamicSearchAd, GmailAd and ImageAd.",
-                    "isHidden":false
+                    "name": "adsMutate",
+                    "description": "Updates ads. Operation statuses are returned. Updating ads is not supported for TextAd, ExpandedDynamicSearchAd, GmailAd and ImageAd.",
+                    "isHidden": false
                 },
                 {
-                    "name":"campaignBudgets",
-                    "description":"Creates, updates, or removes campaign budgets. Operation statuses are returned.",
-                    "isHidden":false
+                    "name": "campaignBudgets",
+                    "description": "Creates, updates, or removes campaign budgets. Operation statuses are returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"campaignsMutate",
-                    "description":"Creates, updates, or removes campaigns. Operation statuses are returned.",
-                    "isHidden":false
+                    "name": "campaignsMutate",
+                    "description": "Creates, updates, or removes campaigns. Operation statuses are returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"createCustomerClient",
-                    "description":"Creates a new client under manager. The new client customer is returned.",
-                    "isHidden":false
+                    "name": "createCustomerClient",
+                    "description": "Creates a new client under manager. The new client customer is returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"search",
-                    "description":"Returns all rows that match the search query.",
-                    "isHidden":false
+                    "name": "search",
+                    "description": "Returns all rows that match the search query.",
+                    "isHidden": false
                 },
                 {
-                    "name":"customersMutate",
-                    "description":"Updates a customer. Operation statuses are returned.",
-                    "isHidden":false
+                    "name": "customersMutate",
+                    "description": "Updates a customer. Operation statuses are returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"audiencesMutate",
-                    "description":"Creates audiences. Operation statuses are returned.",
-                    "isHidden":false
+                    "name": "audiencesMutate",
+                    "description": "Creates audiences. Operation statuses are returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"customAudiencesMutate",
-                    "description":"Creates or updates custom audiences. Operation statuses are returned.",
-                    "isHidden":false
+                    "name": "customAudiencesMutate",
+                    "description": "Creates or updates custom audiences. Operation statuses are returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"campaignCriteriaMutate",
-                    "description":"Creates, updates, or removes criteria. Operation statuses are returned.",
-                    "isHidden":false
+                    "name": "campaignCriteriaMutate",
+                    "description": "Creates, updates, or removes criteria. Operation statuses are returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"userListsMutate",
-                    "description":"Creates or updates user lists. Operation statuses are returned.",
-                    "isHidden":false
+                    "name": "userListsMutate",
+                    "description": "Creates or updates user lists. Operation statuses are returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"userDataMutate",
-                    "description":"Add or remove users to an user list.",
-                    "isHidden":false
+                    "name": "userDataMutate",
+                    "description": "Add or remove users to an user list.",
+                    "isHidden": false
                 },
                 {
-                    "name":"getCustomers",
-                    "description":"Returns all customers.",
-                    "isHidden":false
+                    "name": "getCustomers",
+                    "description": "Returns all customers.",
+                    "isHidden": false
                 },
                 {
-                    "name":"getCampaigns",
-                    "description":"Returns all campaigns.",
-                    "isHidden":false
+                    "name": "getCampaigns",
+                    "description": "Returns all campaigns.",
+                    "isHidden": false
                 },
                 {
-                    "name":"getUserLists",
-                    "description":"Returns all user lists.",
-                    "isHidden":false
+                    "name": "getUserLists",
+                    "description": "Returns all user lists.",
+                    "isHidden": false
                 }
             ],
             "connections": [
@@ -116,76 +117,76 @@
             "products": [
                 "MI 4.3.0"
             ],
-            "operations":[
+            "operations": [
                 {
-                    "name":"init",
-                    "description":"Config operation",
-                    "isHidden":true
+                    "name": "init",
+                    "description": "Config operation",
+                    "isHidden": true
                 },
                 {
-                    "name":"adGroupAdsMutate",
-                    "description":"Creates, updates, or removes ads. Operation statuses are returned.",
-                    "isHidden":false
+                    "name": "adGroupAdsMutate",
+                    "description": "Creates, updates, or removes ads. Operation statuses are returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"adGroupsMutate",
-                    "description":"Creates, updates, or removes ad groups. Operation statuses are returned.",
-                    "isHidden":false
+                    "name": "adGroupsMutate",
+                    "description": "Creates, updates, or removes ad groups. Operation statuses are returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"adsMutate",
-                    "description":"Updates ads. Operation statuses are returned. Updating ads is not supported for TextAd, ExpandedDynamicSearchAd, GmailAd and ImageAd.",
-                    "isHidden":false
+                    "name": "adsMutate",
+                    "description": "Updates ads. Operation statuses are returned. Updating ads is not supported for TextAd, ExpandedDynamicSearchAd, GmailAd and ImageAd.",
+                    "isHidden": false
                 },
                 {
-                    "name":"campaignBudgets",
-                    "description":"Creates, updates, or removes campaign budgets. Operation statuses are returned.",
-                    "isHidden":false
+                    "name": "campaignBudgets",
+                    "description": "Creates, updates, or removes campaign budgets. Operation statuses are returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"campaignsMutate",
-                    "description":"Creates, updates, or removes campaigns. Operation statuses are returned.",
-                    "isHidden":false
+                    "name": "campaignsMutate",
+                    "description": "Creates, updates, or removes campaigns. Operation statuses are returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"createCustomerClient",
-                    "description":"Creates a new client under manager. The new client customer is returned.",
-                    "isHidden":false
+                    "name": "createCustomerClient",
+                    "description": "Creates a new client under manager. The new client customer is returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"search",
-                    "description":"Returns all rows that match the search query.",
-                    "isHidden":false
+                    "name": "search",
+                    "description": "Returns all rows that match the search query.",
+                    "isHidden": false
                 },
                 {
-                    "name":"customersMutate",
-                    "description":"Updates a customer. Operation statuses are returned.",
-                    "isHidden":false
+                    "name": "customersMutate",
+                    "description": "Updates a customer. Operation statuses are returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"audiencesMutate",
-                    "description":"Creates audiences. Operation statuses are returned.",
-                    "isHidden":false
+                    "name": "audiencesMutate",
+                    "description": "Creates audiences. Operation statuses are returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"customAudiencesMutate",
-                    "description":"Creates or updates custom audiences. Operation statuses are returned.",
-                    "isHidden":false
+                    "name": "customAudiencesMutate",
+                    "description": "Creates or updates custom audiences. Operation statuses are returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"campaignCriteriaMutate",
-                    "description":"Creates, updates, or removes criteria. Operation statuses are returned.",
-                    "isHidden":false
+                    "name": "campaignCriteriaMutate",
+                    "description": "Creates, updates, or removes criteria. Operation statuses are returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"userListsMutate",
-                    "description":"Creates or updates user lists. Operation statuses are returned.",
-                    "isHidden":false
+                    "name": "userListsMutate",
+                    "description": "Creates or updates user lists. Operation statuses are returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"uploadUserData",
-                    "description":"Uploads the given user data.",
-                    "isHidden":false
+                    "name": "uploadUserData",
+                    "description": "Uploads the given user data.",
+                    "isHidden": false
                 }
             ],
             "connections": [
@@ -201,76 +202,76 @@
             "products": [
                 "MI 4.3.0"
             ],
-            "operations":[
+            "operations": [
                 {
-                    "name":"init",
-                    "description":"Config operation",
-                    "isHidden":true
+                    "name": "init",
+                    "description": "Config operation",
+                    "isHidden": true
                 },
                 {
-                    "name":"adGroupAdsMutate",
-                    "description":"Creates, updates, or removes ads. Operation statuses are returned.",
-                    "isHidden":false
+                    "name": "adGroupAdsMutate",
+                    "description": "Creates, updates, or removes ads. Operation statuses are returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"adGroupsMutate",
-                    "description":"Creates, updates, or removes ad groups. Operation statuses are returned.",
-                    "isHidden":false
+                    "name": "adGroupsMutate",
+                    "description": "Creates, updates, or removes ad groups. Operation statuses are returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"adsMutate",
-                    "description":"Updates ads. Operation statuses are returned. Updating ads is not supported for TextAd, ExpandedDynamicSearchAd, GmailAd and ImageAd.",
-                    "isHidden":false
+                    "name": "adsMutate",
+                    "description": "Updates ads. Operation statuses are returned. Updating ads is not supported for TextAd, ExpandedDynamicSearchAd, GmailAd and ImageAd.",
+                    "isHidden": false
                 },
                 {
-                    "name":"campaignBudgets",
-                    "description":"Creates, updates, or removes campaign budgets. Operation statuses are returned.",
-                    "isHidden":false
+                    "name": "campaignBudgets",
+                    "description": "Creates, updates, or removes campaign budgets. Operation statuses are returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"campaignsMutate",
-                    "description":"Creates, updates, or removes campaigns. Operation statuses are returned.",
-                    "isHidden":false
+                    "name": "campaignsMutate",
+                    "description": "Creates, updates, or removes campaigns. Operation statuses are returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"createCustomerClient",
-                    "description":"Creates a new client under manager. The new client customer is returned.",
-                    "isHidden":false
+                    "name": "createCustomerClient",
+                    "description": "Creates a new client under manager. The new client customer is returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"search",
-                    "description":"Returns all rows that match the search query.",
-                    "isHidden":false
+                    "name": "search",
+                    "description": "Returns all rows that match the search query.",
+                    "isHidden": false
                 },
                 {
-                    "name":"customersMutate",
-                    "description":"Updates a customer. Operation statuses are returned.",
-                    "isHidden":false
+                    "name": "customersMutate",
+                    "description": "Updates a customer. Operation statuses are returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"audiencesMutate",
-                    "description":"Creates audiences. Operation statuses are returned.",
-                    "isHidden":false
+                    "name": "audiencesMutate",
+                    "description": "Creates audiences. Operation statuses are returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"customAudiencesMutate",
-                    "description":"Creates or updates custom audiences. Operation statuses are returned.",
-                    "isHidden":false
+                    "name": "customAudiencesMutate",
+                    "description": "Creates or updates custom audiences. Operation statuses are returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"campaignCriteriaMutate",
-                    "description":"Creates, updates, or removes criteria. Operation statuses are returned.",
-                    "isHidden":false
+                    "name": "campaignCriteriaMutate",
+                    "description": "Creates, updates, or removes criteria. Operation statuses are returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"userListsMutate",
-                    "description":"Creates or updates user lists. Operation statuses are returned.",
-                    "isHidden":false
+                    "name": "userListsMutate",
+                    "description": "Creates or updates user lists. Operation statuses are returned.",
+                    "isHidden": false
                 },
                 {
-                    "name":"userDataMutate",
-                    "description":"Uploads the given user data.",
-                    "isHidden":false
+                    "name": "userDataMutate",
+                    "description": "Uploads the given user data.",
+                    "isHidden": false
                 }
             ],
             "connections": [
