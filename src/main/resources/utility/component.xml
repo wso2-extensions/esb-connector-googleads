@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- ~  Copyright (c) 2024, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
+ ~  Copyright (c) 2025, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
  ~
  ~  WSO2 LLC. licenses this file to you under the Apache License,
  ~  Version 2.0 (the "License"); you may not use this file except
@@ -17,17 +17,13 @@
  ~  under the License.
 -->
 
-<!-- Generated on 23-Fri, 08, 2024 16:11:19+0530 -->
+<!-- Generated on 03-Tue, 09, 2024 13:16:27+0530 -->
 
-<connector>
-    <component name="googleAds" package="org.wso2.carbon.connector">
-        <dependency component="config"/>
-        <dependency component="ads"/>
-        <dependency component="campaign"/>
-        <dependency component="users"/>
-        <dependency component="utility"/>
-        <description>WSO2 Google Ads Connector Library</description>
-    </component>
-    <displayName>Google Ads</displayName>
-    <icon>icon/icon-small.png</icon>
-</connector>
+<component name="utility" type="synapse/template">
+    <subComponents>
+        <component name="search">
+            <file>search.xml</file>
+            <description>Returns all rows that match the search query.</description>
+        </component>
+    </subComponents>
+</component>

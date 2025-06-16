@@ -17,13 +17,11 @@
  ~  under the License.
 -->
 
-<!-- Generated on 23-Fri, 08, 2024 16:11:19+0530 -->
-
-<template xmlns="http://ws.apache.org/ns/synapse" name="search">
+<template xmlns="http://ws.apache.org/ns/synapse" name="getUserLists">
     <!-- Path Parameter List -->
     <parameter name="customerId" description="Required. The ID of the customer being queried."/>
     <!-- Request Body Parameter List -->
-    <parameter name="query" description="Required. The query string."/>
+    <parameter name="userListName" description="Filter for user lists with this name."/>
     <parameter name="pageToken"
                description="Token of the page to retrieve. If not specified, the first page of results will be returned. Use the value obtained fromnextPageTokenin the previous response in order to request the next page of results."/>
     <parameter name="pageSize"
@@ -33,6 +31,8 @@
                description="If true, the total number of results that match the query ignoring the LIMIT clause will be included in the response. Default is false."/>
     <parameter name="summaryRowSetting"
                description="Determines whether a summary row will be returned. By default, summary row is not returned. If requested, the summary row will be sent in a response by itself after all other query results are returned."/>
+    <parameter name="responseVariable" description="Name of the variable to store operation output"/>
+    <parameter name="overwriteBody" description="Replace Message Body with operation output"/>
     <sequence>
         <class name="org.wso2.carbon.google.ads.connector.RestURLBuilder">
             <property name="operationPath" value="/v17/customers/{customerId}/googleAds:search"/>
@@ -41,8 +41,7 @@
         <payloadFactory media-type="json" template-type="freemarker">
             <format>
                 <![CDATA[{
-                                                                                        <#if (args.arg1)?has_content>
-                                    "query": "${args.arg1}",                                </#if>
+                                    "query": <#if (args.arg7)?has_content>"${args.arg1} WHERE user_list.name='${args.arg7}'"<#else>"${args.arg1}"</#if>,
                                                                                             <#if (args.arg2)?has_content>
                                     "pageToken": "${args.arg2}",                                </#if>
                                                                                             <#if (args.arg3)?has_content>
@@ -56,12 +55,16 @@
                                                                                         }]]>
             </format>
             <args>
-                <arg evaluator="xml" expression="$func:query"/>
+                <arg evaluator="xml" value="SELECT user_list.id, user_list.name, user_list.membership_life_span,
+                user_list.membership_status, user_list.eligible_for_display, user_list.eligible_for_search,
+                user_list.size_for_display, user_list.size_for_search, user_list.resource_name, user_list.type,
+                user_list.access_reason, user_list.match_rate_percentage FROM user_list"/>
                 <arg evaluator="xml" expression="$func:pageToken"/>
                 <arg evaluator="xml" expression="$func:pageSize"/>
                 <arg evaluator="xml" expression="$func:validateOnly"/>
                 <arg evaluator="xml" expression="$func:returnTotalResultsCount"/>
                 <arg evaluator="xml" expression="$func:summaryRowSetting"/>
+                <arg evaluator="xml" expression="$func:userListName"/>
             </args>
         </payloadFactory>
         <property name="DISABLE_CHUNKING" scope="axis2" type="STRING" value="true"/>

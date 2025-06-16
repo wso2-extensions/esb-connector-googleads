@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Response Schema for the Audiences Mutate operation of GoogleAds",
+  "description": "Schema representing the output of the audiences mutate operation in GoogleAds API",
+  "properties": {
+    "payload": {
+      "description": "Response for the `audiencesMutate` method.",
+      "type": "object",
+      "properties": {
+        "partialFailureError": {
+          "description": "Errors that pertain to operation failures in the partial failure mode.",
+          "type": "object"
+        },
+        "results": {
+          "description": "All results for the mutate.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "resourceName": {
+                "description": "The resource name of the audience.",
+                "type": "string"
+              },
+              "audience": {
+                "description": "The mutated audience with only mutable fields after mutate.",
+                "type": "object",
+                "properties": {
+                  "resourceName": {
+                    "description": "The resource name of the audience.",
+                    "type": "string"
+                  },
+                  "id": {
+                      "description": "The ID of the audience.",
+                      "type": "string"
+                  },
+                  "status": {
+                    "description": "The status of the audience.",
+                    "type": "string"
+                  },
+                  "description": {
+                    "description": "The description of the audience.",
+                    "type": "string"
+                  },
+                  "dimensions": {
+                    "description": "Positive dimensions specifying the audience composition.",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "exclusionDimension" : {
+                    "description": "The exclusion dimension of the audience.",
+                    "type": "string"
+                  },
+                  "scope": {
+                    "description": "The scope of the audience.",
+                    "type": "string"
+                  },
+                  "assetGroup": {
+                    "description": "The asset group that this audience is scoped under. ",
+                    "type": "string"
+                  },
+                  "name": {
+                      "description": "The name of the audience.",
+                      "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "attributes": {
+      "description": "Metadata about the operation.",
+      "properties": {
+        "statusCode": {
+          "description": "HTTP status code of the API response."
+        }
+      }
+    },
+    "headers": {
+      "description": "HTTP headers of the API response.",
+      "properties": {}
+    }
+  }
+}

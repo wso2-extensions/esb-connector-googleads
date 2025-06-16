@@ -1,0 +1,150 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Response Schema for the Ad Groups Mutate Operation of GoogleAds",
+  "description": "Schema representing the output of the ad groups mutate operation in GoogleAds API",
+  "properties": {
+    "payload": {
+      "description": "Response for the `adGroupsMutate` method.",
+      "type": "object",
+      "properties": {
+        "partialFailureError": {
+          "description": "Errors that pertain to operation failures in the partial failure mode.",
+          "type": "object"
+        },
+        "results": {
+          "description": "All results for the mutate.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "resourceName": {
+                "description": "The resource name of the ad.",
+                "type": "string"
+              },
+              "adGroup": {
+                "description": "An ad group ad.",
+                "type": "object",
+                "properties": {
+                  "resourceName": {
+                    "description": " The resource name of the ad",
+                    "type": "string"
+                  },
+                  "status": {
+                    "description": "The status of the ad.",
+                    "type": "string"
+                  },
+                  "type": {
+                    "description": "The type of the ad group.",
+                    "type": "string"
+                  },
+                  "adRotationMode": {
+                    "description": "The ad rotation mode of the ad group.",
+                    "type": "string"
+                  },
+                  "urlCustomParameters": {
+                    "description": "The list of mappings used to substitute custom parameter tags.",
+                    "type": "array",
+                    "items": {
+                      "type": "object"
+                    }
+                  },
+                  "optimizedTargetingEnabled": {
+                    "description": "Optimized Targeting is the replacement for Audience Expansion.",
+                    "type": "boolean"
+                  },
+                  "excludeDemographicExpansion": {
+                    "description": "Excludes demographics from expanded targeting when optimized targeting is enabled; ignored otherwise.",
+                    "type": "boolean"
+                  },
+                  "targetingSetting": {
+                    "description": "The targeting setting of the ad group.",
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "displayCustomBidDimension": {
+                    "description": "Provides aggregated view into why an ad group ad is not serving or not serving optimally.",
+                    "type": "string"
+                  },
+                  "audienceSetting": {
+                    "description": "The audience setting of the ad group.",
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "primaryStatus": {
+                    "description": "Provides aggregated view into why an ad group is not serving or not serving optimally.",
+                    "type": "string"
+                  },
+                  "id": {
+                    "description": "he ID of the ad group.",
+                    "type": "string"
+                  },
+                  "name": {
+                    "description": "The name of the ad group.",
+                    "type": "string"
+                  },
+                  "campaign": {
+                    "description": "The campaign to which the ad group belongs.",
+                    "type": "string"
+                  },
+                  "baseAdGroup": {
+                    "description": "This field is the resource name of the base ad group from which this ad group was created.",
+                    "type": "string"
+                  },
+                  "trackingUrlTemplate": {
+                    "description": "The URL template for constructing a tracking URL.",
+                    "type": "string"
+                  },
+                  "cpcBidMicros": {
+                    "description": "The maximum CPC (cost-per-click) bid.",
+                    "type": "string"
+                  },
+                  "cpmBidMicros": {
+                    "description": "The maximum CPM (cost-per-thousand impressions) bid.",
+                    "type": "string"
+                  },
+                  "targetCpaMicros": {
+                    "description": "The target CPA (cost-per-acquisition) bid.",
+                    "type": "string"
+                  },
+                  "targetCpmMicros": {
+                    "description": "The target CPM (cost-per-thousand impressions) bid.",
+                    "type": "string"
+                  },
+                  "percentCpcBidMicros": {
+                    "description": "The percent cpc bid amount, expressed as a fraction of the advertised price for some good or service.",
+                    "type": "string"
+                  },
+                  "finalUrlSuffix": {
+                    "description": "URL template for appending params to Final URL.",
+                    "type": "string"
+                  },
+                  "effectiveTargetRoas": {
+                    "description": "The effective target ROAS (return-on-ad-spend).",
+                    "type": "number"
+                  },
+                  "effectiveTargetCpaMicros": {
+                    "description": "The effective target CPA (cost-per-acquisition).",
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "attributes": {
+      "description": "Metadata about the operation.",
+      "properties": {
+        "statusCode": {
+          "description": "HTTP status code of the API response."
+        }
+      }
+    },
+    "headers": {
+      "description": "HTTP headers of the API response.",
+      "properties": {}
+    }
+  }
+}

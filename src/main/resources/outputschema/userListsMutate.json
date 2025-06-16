@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Response Schema for the User Lists Mutate operation of GoogleAds",
+  "description": "Schema representing the output of the user lists mutate operation in GoogleAds API",
+  "properties": {
+    "payload": {
+      "description": "Response for the `userListsMutate` method.",
+      "type": "object",
+      "properties": {
+        "partialFailureError": {
+          "description": "Errors that pertain to operation failures in the partial failure mode.",
+          "type": "object"
+        },
+        "results": {
+          "description": "All results for the mutate.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "resourceName": {
+                "description": "The resource name of the ad.",
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "attributes": {
+      "description": "Metadata about the operation.",
+      "properties": {
+        "statusCode": {
+          "description": "HTTP status code of the API response."
+        }
+      }
+    },
+    "headers": {
+      "description": "HTTP headers of the API response.",
+      "properties": {}
+    }
+  }
+}

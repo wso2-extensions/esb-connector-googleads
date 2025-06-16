@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- ~  Copyright (c) 2024, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
+ ~  Copyright (c) 2025, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
  ~
  ~  WSO2 LLC. licenses this file to you under the Apache License,
  ~  Version 2.0 (the "License"); you may not use this file except
@@ -19,37 +19,11 @@
 
 <!-- Generated on 03-Tue, 09, 2024 13:16:27+0530 -->
 
-<component name="functions" type="synapse/template">
+<component name="users" type="synapse/template">
     <subComponents>
-        <component name="adGroupAdsMutate">
-            <file>adGroupAdsMutate.xml</file>
-            <description>Creates, updates, or removes ads. Operation statuses are returned.</description>
-        </component>
-        <component name="adGroupsMutate">
-            <file>adGroupsMutate.xml</file>
-            <description>Creates, updates, or removes ad groups. Operation statuses are returned.</description>
-        </component>
-        <component name="adsMutate">
-            <file>adsMutate.xml</file>
-            <description>Updates ads. Operation statuses are returned. Updating ads is not supported for TextAd,
-                ExpandedDynamicSearchAd, GmailAd and ImageAd.
-            </description>
-        </component>
-        <component name="campaignBudgets">
-            <file>campaignBudgets.xml</file>
-            <description>Creates, updates, or removes campaign budgets. Operation statuses are returned.</description>
-        </component>
-        <component name="campaignsMutate">
-            <file>campaignsMutate.xml</file>
-            <description>Creates, updates, or removes campaigns. Operation statuses are returned.</description>
-        </component>
         <component name="createCustomerClient">
             <file>createCustomerClient.xml</file>
             <description>Creates a new client under manager. The new client customer is returned.</description>
-        </component>
-        <component name="search">
-            <file>search.xml</file>
-            <description>Returns all rows that match the search query.</description>
         </component>
         <component name="customersMutate">
             <file>customersMutate.xml</file>
@@ -63,10 +37,6 @@
             <file>customAudiencesMutate.xml</file>
             <description>Creates or updates custom audiences. Operation statuses are returned.</description>
         </component>
-        <component name="campaignCriteriaMutate">
-            <file>campaignCriteriaMutate.xml</file>
-            <description>Creates, updates, or removes criteria. Operation statuses are returned.</description>
-        </component>
         <component name="userListsMutate">
             <file>userListsMutate.xml</file>
             <description>Creates or updates user lists. Operation statuses are returned.</description>
@@ -74,10 +44,6 @@
         <component name="userDataMutate">
             <file>userDataMutate.xml</file>
             <description>Uploads the given user data.</description>
-        </component>
-        <component name="getCampaigns">
-            <file>getCampaigns.xml</file>
-            <description>Returns all campaigns that match the search query.</description>
         </component>
         <component name="getUserLists">
             <file>getUserLists.xml</file>

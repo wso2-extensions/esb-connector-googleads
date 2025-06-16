@@ -1,0 +1,172 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Response Schema for the Ad Group Ads Mutate Operation of GoogleAds",
+  "description": "Schema representing the output of the ad group ads mutate operation in GoogleAds API",
+  "properties": {
+    "payload": {
+      "description": "Response for the `adGroupAdsMutate` method.",
+      "type": "object",
+      "properties": {
+        "partialFailureError": {
+          "description": "Errors that pertain to operation failures in the partial failure mode.",
+          "type": "object"
+        },
+        "results": {
+          "description": "All results for the mutate.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "resourceName": {
+                "description": "The resource name of the ad.",
+                "type": "string"
+              },
+              "adGroupAd": {
+                "description": "An ad group ad.",
+                "type": "object",
+                "properties": {
+                  "resourceName": {
+                    "description": " The resource name of the ad",
+                    "type": "string"
+                  },
+                  "status": {
+                    "description": "The status of the ad.",
+                    "type": "string"
+                  },
+                  "ad": {
+                    "description": "The ad details.",
+                    "type": "object",
+                    "properties": {
+                      "resourceName": {
+                        "description": "The resource name of the ad.",
+                        "type": "string"
+                      },
+                      "finalUrls": {
+                        "description": "Final URLs for the ad.",
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "finalMobileUrls": {
+                        "description": "Final mobile URLs for the ad.",
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "urlCustomParameters": {
+                        "description": "Custom parameters for the ad URLs.",
+                        "type": "array",
+                        "items": {
+                          "type": "object"
+                        }
+                      },
+                      "type": {
+                        "description": "The type of the ad.",
+                        "type": "string"
+                      },
+                      "devicePreference": {
+                        "description": "The device preference for the ad.",
+                        "type": "string"
+                      },
+                      "urlCollections": {
+                        "description": "URL collections for the ad.",
+                        "type": "array",
+                        "items": {
+                          "type": "object"
+                        }
+                      },
+                      "systemManagedResourceSource": {
+                        "description": "Indicates the source of the system-managed resource.",
+                        "type": "string"
+                      },
+                      "id": {
+                        "description": "The ID of the ad.",
+                        "type": "string"
+                      },
+                      "trackingUrlTemplate": {
+                        "description": "The tracking URL template for the ad.",
+                        "type": "string"
+                      },
+                      "finalUrlSuffix": {
+                        "description": "The final URL suffix for the ad.",
+                        "type": "string"
+                      },
+                      "displayUrl": {
+                        "description": "The display URL for the ad.",
+                        "type": "string"
+                      },
+                      "addedByGoogleAds": {
+                        "description": "Indicates if the ad was added by Google Ads.",
+                        "type": "boolean"
+                      },
+                      "name": {
+                        "description": "The name of the ad.",
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "policySummary": {
+                    "description": "Policy summary for the ad.",
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "adGroup": {
+                    "description": "The ad group to which the ad belongs.",
+                    "type": "string"
+                  },
+                  "actionItems": {
+                    "description": "A list of recommendations to improve the ad strength.",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "labels": {
+                    "description": "The resource names of labels attached to this ad group ad.",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "primaryStatus": {
+                    "description": "Provides aggregated view into why an ad group ad is not serving or not serving optimally.",
+                    "type": "string"
+                  },
+                  "primaryStatusReasons": {
+                    "description": "Reasons for the primary status of the ad group ad.",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "adGroupAdAssetAutomationSettings": {
+                    "description": "Settings for ad group ad asset automation.",
+                    "type": "array",
+                    "items": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "attributes": {
+      "description": "Metadata about the operation.",
+      "properties": {
+        "statusCode": {
+          "description": "HTTP status code of the API response."
+        }
+      }
+    },
+    "headers": {
+      "description": "HTTP headers of the API response.",
+      "properties": {}
+    }
+  }
+}

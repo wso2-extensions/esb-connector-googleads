@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Response Schema for the GetUserLists operation of GoogleAds",
+  "description": "Schema representing the output of the get user lists operation in GoogleAds API",
+  "properties": {
+    "payload": {
+      "description": "Response for the `getUserLists` method.",
+      "type": "object",
+      "properties": {
+        "results": {
+          "description": "The list of rows that matched the query.",
+          "type": "array",
+          "properties": {}
+        },
+        "nextPageToken": {
+          "description": "Pagination token used to retrieve the next page of results.",
+          "type": "string"
+        },
+        "totalResultsCount": {
+          "description": "Total number of results that match the query ignoring the LIMIT clause.",
+          "type": "integer"
+        },
+        "fieldMask": {
+          "description": "FieldMask that represents what fields were requested by the user.",
+          "type": "string"
+        },
+        "summaryRow": {
+          "description": "Summary row that contains summary of metrics in results.",
+          "type": "object",
+          "properties": {},
+          "queryResourceConsumption": {
+            "description": "The amount of resources consumed to serve the query.",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "attributes": {
+      "description": "Metadata about the operation.",
+      "properties": {
+        "statusCode": {
+          "description": "HTTP status code of the API response."
+        }
+      }
+    },
+    "headers": {
+      "description": "HTTP headers of the API response.",
+      "properties": {}
+    }
+  }
+}

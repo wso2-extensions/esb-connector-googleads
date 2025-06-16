@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Response Schema for the Campaign Criteria Mutate operation of GoogleAds",
+  "description": "Schema representing the output of the campaign criteria mutate operation in GoogleAds API",
+  "properties": {
+    "payload": {
+      "description": "Response for the `campaignCriteriaMutate` method.",
+      "type": "object",
+      "properties": {
+        "partialFailureError": {
+          "description": "Errors that pertain to operation failures in the partial failure mode.",
+          "type": "object"
+        },
+        "results": {
+          "description": "All results for the mutate.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "resourceName": {
+                "description": "The resource name of the criterion that was mutated.",
+                "type": "string"
+              },
+              "campaignCriterion": {
+                "description": "The campaign criterion with only mutable fields after mutate.",
+                "type": "object",
+                "properties": {
+                  "resourceName": {
+                    "description": "The resource name of the campaign criterion.",
+                    "type": "string"
+                  },
+                  "displayName": {
+                    "description": "The display name of the criterion.",
+                    "type": "string"
+                  },
+                  "type": {
+                    "description": "The type of the criterion.",
+                    "type": "string"
+                  },
+                  "status": {
+                    "description": "The status of the criterion after mutation.",
+                    "type": "string"
+                  },
+                  "campaign": {
+                    "description": "The campaign to which the criterion belongs.",
+                    "type": "string"
+                  },
+                  "criterionId": {
+                    "description": "The ID of the criterion.",
+                    "type": "string"
+                  },
+                  "bidModifier": {
+                    "description": "The modifier for the bids when the criterion matches.",
+                    "type": "number"
+                  },
+                  "negative": {
+                    "description": "Indicates whether  to target (false) or exclude (true) the criterion.",
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "attributes": {
+      "description": "Metadata about the operation.",
+      "properties": {
+        "statusCode": {
+          "description": "HTTP status code of the API response."
+        }
+      }
+    },
+    "headers": {
+      "description": "HTTP headers of the API response.",
+      "properties": {}
+    }
+  }
+}

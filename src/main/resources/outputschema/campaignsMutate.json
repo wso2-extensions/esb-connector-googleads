@@ -1,0 +1,155 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Response Schema for the campaigns mutate operation of GoogleAds",
+  "description": "Schema representing the output of the campaigns mutate operation in GoogleAds API",
+  "properties": {
+    "payload": {
+      "description": "Response for the `campaignsMutate` method.",
+      "type": "object",
+      "properties": {
+        "partialFailureError": {
+          "description": "Errors that pertain to operation failures in the partial failure mode.",
+          "type": "object"
+        },
+        "results": {
+          "description": "All results for the mutate.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "resourceName": {
+                "description": "The resource name of the criterion that was mutated.",
+                "type": "string"
+              },
+              "campaign": {
+                "description": "The mutated campaign with only mutable fields after mutate.",
+                "type": "object",
+                "properties": {
+                  "resourceName": {
+                    "description": "The resource name of the campaign criterion.",
+                    "type": "string"
+                  },
+                  "primaryStatus": {
+                    "description": "The primary status of the campaign.",
+                    "type": "string"
+                  },
+                  "primaryStatusReasons": {
+                    "description": "The primary status reasons of the campaign.",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "status": {
+                    "description": "The status of the campaign.",
+                    "type": "string"
+                  },
+                  "servingStatus": {
+                    "description": "The serving status of the campaign.",
+                    "type": "string"
+                  },
+                  "biddingStrategySystemStatus": {
+                    "description": "The system status of the bidding strategy.",
+                    "type": "string"
+                  },
+                  "adServingOptimizationStatus": {
+                    "description": "The ad serving optimization status of the campaign.",
+                    "type": "string"
+                  },
+                  "advertisingChannelType": {
+                    "description": "The advertising channel type of the campaign.",
+                    "type": "string"
+                  },
+                  "advertisingChannelSubType": {
+                    "description": "The advertising channel subtype of the campaign.",
+                    "type": "string"
+                  },
+                  "urlCustomParameters": {
+                    "description": "The URL custom parameters of the campaign.",
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {}
+                    }
+                  },
+                  "localServicesCampaignSettings": {
+                    "description": "Settings for local services campaigns.",
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "travelCampaignSettings": {
+                    "description": "Settings for travel campaigns.",
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "labels": {
+                    "description": "The labels attached to the campaign.",
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "resourceName": {
+                          "description": "The resource name of the label.",
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "id": {
+                    "description": "The ID of the campaign.",
+                    "type": "string"
+                  },
+                  "name": {
+                    "description": "The name of the campaign.",
+                    "type": "string"
+                  },
+                  "trackingUrlTemplate": {
+                    "description": "The tracking URL template of the campaign.",
+                    "type": "string"
+                  },
+                  "baseCampaign": {
+                    "description": "The base campaign of the campaign.",
+                    "type": "string"
+                  },
+                  "campaignBudget": {
+                    "description": "The budget of the campaign.",
+                    "type": "string"
+                  },
+                  "startDate": {
+                    "description": "The start date of the campaign.",
+                    "type": "string"
+                  },
+                  "endDate": {
+                    "description": "The end date of the campaign.",
+                    "type": "string"
+                  },
+                  "brandGuidelinesEnabled": {
+                    "description": "Indicates whether brand guidelines are enabled for the campaign.",
+                    "type": "boolean"
+                  },
+                  "hotelPropertyAssetSet": {
+                    "description": "The hotel property asset set associated with the campaign.",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "attributes": {
+      "description": "Metadata about the operation.",
+      "properties": {
+        "statusCode": {
+          "description": "HTTP status code of the API response."
+        }
+      }
+    },
+    "headers": {
+      "description": "HTTP headers of the API response.",
+      "properties": {}
+    }
+  }
+}
