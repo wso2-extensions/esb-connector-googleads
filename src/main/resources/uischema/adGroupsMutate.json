@@ -37,7 +37,7 @@
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "true",
-                    "helpTip": "The ID of the customer whose ad groups are being modified."
+                    "helpTip": "The ID of the customer whose ad groups are being modified. E.g., 1234567890"
                   }
                 },
                 {

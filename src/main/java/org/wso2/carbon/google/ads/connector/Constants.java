@@ -22,6 +22,7 @@ public class Constants {
 
     public static final String CONNECTION_NAME = "name";
     public static final String BASE = "base";
+    public static final String API_VERSION = "apiVersion";
     public static final String REFRESH_TOKEN = "refreshToken";
     public static final String CLIENT_ID = "clientId";
     public static final String CLIENT_SECRET = "clientSecret";

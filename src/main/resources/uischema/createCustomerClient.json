@@ -56,7 +56,7 @@
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "true",
-                    "helpTip": "The ID of the Manager under whom client customer is being created."
+                    "helpTip": "The ID of the Manager under whom client customer is being created. E.g., 1234567890"
                   }
                 },
                 {

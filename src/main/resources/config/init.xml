@@ -20,6 +20,7 @@
 <template name="init" onError="fault" xmlns="http://ws.apache.org/ns/synapse">
     <parameter name="name" description="Unique name to identify the connection by."/>
     <parameter name="base" description="The service root URL."/>
+    <parameter name="apiVersion" description="API version to access the endpoint."/>
     <parameter name="refreshToken" description="The refresh token that can be used to obtain a new access token."/>
     <parameter name="clientId" description="Client ID of the registered application."/>
     <parameter name="clientSecret" description="Client secret of the registered application."/>
@@ -35,5 +36,6 @@
             </then>
         </filter>
         <header name="Authorization" expression="fn:concat('Bearer ', $ctx:_OH_INTERNAL_ACCESS_TOKEN_)" scope="transport"/>
+        <property name="Accept-Encoding" value="identity" scope="transport" action="set"/>
     </sequence>
 </template>

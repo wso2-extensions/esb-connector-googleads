@@ -37,7 +37,7 @@
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "true",
-                    "helpTip": "The ID of the customer being queried."
+                    "helpTip": "The ID of the customer being queried. E.g., 1234567890"
                   }
                 },
                 {

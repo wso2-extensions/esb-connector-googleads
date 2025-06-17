@@ -29,17 +29,6 @@
                 {
                   "type": "attribute",
                   "value": {
-                    "name": "base",
-                    "displayName": "Base URL",
-                    "inputType": "string",
-                    "defaultValue": "https://googleads.googleapis.com",
-                    "required": "true",
-                    "helpTip": "The service root URL."
-                  }
-                },
-                {
-                  "type": "attribute",
-                  "value": {
                     "name": "clientId",
                     "displayName": "Client ID",
                     "inputType": "stringOrExpression",
@@ -69,41 +58,71 @@
                     "required": "true",
                     "helpTip": "The refresh token that can be used to obtain a new access token."
                   }
-                },
-                {
-                  "type": "attribute",
-                  "value": {
-                    "name": "developerToken",
-                    "displayName": "Developer Token",
-                    "inputType": "stringOrExpression",
-                    "defaultValue": "",
-                    "required": "true",
-                    "helpTip": "The developer token for the Google Ads connection."
-                  }
-                },
-                {
-                  "type": "attribute",
-                  "value": {
-                    "name": "loginCustomerId",
-                    "displayName": "Login Customer ID",
-                    "inputType": "stringOrExpression",
-                    "defaultValue": "",
-                    "required": "false",
-                    "helpTip": "The ID of the Manager Account. Required when using a manager account to access an customer account."
-                  }
-                },
-                {
-                  "type": "attribute",
-                  "value": {
-                    "name": "tokenEndpoint",
-                    "displayName": "Token Endpoint",
-                    "inputType": "string",
-                    "defaultValue": "https://www.googleapis.com/oauth2/v3/token",
-                    "required": "true",
-                    "helpTip": "An HTTP endpoint that can be uses to obtain an access token."
-                  }
                 }
               ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "attributeGroup",
+      "value": {
+        "groupName": "API Details",
+        "elements": [
+          {
+            "type": "attribute",
+            "value": {
+              "name": "base",
+              "displayName": "Base URL",
+              "inputType": "stringOrExpression",
+              "defaultValue": "https://googleads.googleapis.com",
+              "required": "true",
+              "helpTip": "The service root URL."
+            }
+          },
+          {
+            "type": "attribute",
+            "value": {
+              "name": "apiVersion",
+              "displayName": "API Version",
+              "inputType": "stringOrExpression",
+              "defaultValue": "v18",
+              "required": "false",
+              "helpTip": "API Version used to connect with the mail server"
+            }
+          },
+          {
+            "type": "attribute",
+            "value": {
+              "name": "developerToken",
+              "displayName": "Developer Token",
+              "inputType": "stringOrExpression",
+              "defaultValue": "",
+              "required": "true",
+              "helpTip": "The developer token for the Google Ads connection."
+            }
+          },
+          {
+            "type": "attribute",
+            "value": {
+              "name": "loginCustomerId",
+              "displayName": "Login Customer ID",
+              "inputType": "stringOrExpression",
+              "defaultValue": "",
+              "required": "false",
+              "helpTip": "The ID of the Manager Account. Required when using a manager account to access an customer account. E.g., 1234567890"
+            }
+          },
+          {
+            "type": "attribute",
+            "value": {
+              "name": "tokenEndpoint",
+              "displayName": "Token URL",
+              "inputType": "stringOrExpression",
+              "defaultValue": "https://www.googleapis.com/oauth2/v3/token",
+              "required": "true",
+              "helpTip": "An HTTP endpoint that can be uses to obtain an access token."
             }
           }
         ]

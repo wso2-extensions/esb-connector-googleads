@@ -61,7 +61,9 @@ public class ClientCredentialsAccessTokenHandler extends AbstractConnector {
 
         String base = (String) getParameter(messageContext, Constants.BASE);
         if (StringUtils.endsWith(base, "/")) {
-            base = StringUtils.removeEnd(base, "/");
+            base = base.concat((String) getParameter(messageContext, Constants.API_VERSION));
+        } else {
+            base = base.concat("/").concat((String) getParameter(messageContext, Constants.API_VERSION));
         }
         messageContext.setProperty(Constants.PROPERTY_BASE, base);
 

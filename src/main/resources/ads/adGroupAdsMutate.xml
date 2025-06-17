@@ -35,7 +35,7 @@
     <parameter name="overwriteBody" description="Replace Message Body with operation output"/>
     <sequence>
         <class name="org.wso2.carbon.google.ads.connector.RestURLBuilder">
-            <property name="operationPath" value="/v17/customers/{customerId}/adGroupAds:mutate"/>
+            <property name="operationPath" value="/customers/{customerId}/adGroupAds:mutate"/>
             <property name="pathParameters" value="customerId,"/>
         </class>
         <payloadFactory media-type="json" template-type="freemarker">
