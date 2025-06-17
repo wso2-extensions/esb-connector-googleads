@@ -10,7 +10,8 @@
       "properties": {
         "partialFailureError": {
           "description": "Errors that pertain to operation failures in the partial failure mode.",
-          "type": "object"
+          "type": "object",
+          "properties": {}
         },
         "results": {
           "description": "All results for the mutate.",
@@ -77,26 +78,6 @@
                   "hasRecommendedBudget": {
                     "description": "Indicates whether the budget has a recommended amount.",
                     "type": "boolean"
-                  },
-                  "recommendedBudgetAmountMicros": {
-                    "description": "The recommended budget amount.",
-                    "type": "string"
-                  },
-                  "recommendedBudgetEstimatedChangeWeeklyClicks": {
-                    "description": "The estimated change in weekly clicks with the recommended budget.",
-                    "type": "string"
-                  },
-                  "recommendedBudgetEstimatedChangeWeeklyCostMicros": {
-                    "description": "The estimated change in weekly cost with the recommended budget.",
-                    "type": "string"
-                  },
-                  "recommendedBudgetEstimatedChangeWeeklyInteractions": {
-                    "description": "The estimated change in weekly interactions with the recommended budget.",
-                    "type": "string"
-                  },
-                  "recommendedBudgetEstimatedChangeWeeklyViews": {
-                    "description": "The estimated change in weekly views with the recommended budget.",
-                    "type": "string"
                   }
                 }
               }
