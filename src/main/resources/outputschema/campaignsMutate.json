@@ -10,7 +10,8 @@
       "properties": {
         "partialFailureError": {
           "description": "Errors that pertain to operation failures in the partial failure mode.",
-          "type": "object"
+          "type": "object",
+          "properties": {}
         },
         "results": {
           "description": "All results for the mutate.",

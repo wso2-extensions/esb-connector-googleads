@@ -22,6 +22,7 @@
 <component name="utility" type="synapse/template">
     <subComponents>
         <component name="search">
+            <displayName>Search</displayName>
             <file>search.xml</file>
             <description>Returns all rows that match the search query.</description>
         </component>

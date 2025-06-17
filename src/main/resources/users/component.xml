@@ -22,34 +22,42 @@
 <component name="users" type="synapse/template">
     <subComponents>
         <component name="createCustomerClient">
+            <displayName>Create Customer Client</displayName>
             <file>createCustomerClient.xml</file>
             <description>Creates a new client under manager. The new client customer is returned.</description>
         </component>
         <component name="customersMutate">
+            <displayName>Mutate Customer</displayName>
             <file>customersMutate.xml</file>
             <description>Updates a customer. Operation statuses are returned.</description>
         </component>
         <component name="audiencesMutate">
+            <displayName>Mutate Audiences</displayName>
             <file>audiencesMutate.xml</file>
             <description>Creates audiences. Operation statuses are returned.</description>
         </component>
         <component name="customAudiencesMutate">
+            <displayName>Mutate Custom Audiences</displayName>
             <file>customAudiencesMutate.xml</file>
             <description>Creates or updates custom audiences. Operation statuses are returned.</description>
         </component>
         <component name="userListsMutate">
+            <displayName>Mutate User Lists</displayName>
             <file>userListsMutate.xml</file>
             <description>Creates or updates user lists. Operation statuses are returned.</description>
         </component>
         <component name="userDataMutate">
+            <displayName>Mutate User Data</displayName>
             <file>userDataMutate.xml</file>
             <description>Uploads the given user data.</description>
         </component>
         <component name="getUserLists">
+            <displayName>Get User Lists</displayName>
             <file>getUserLists.xml</file>
             <description>Returns all user lists that match the search query.</description>
         </component>
         <component name="getCustomers">
+            <displayName>Get Customers</displayName>
             <file>getCustomers.xml</file>
             <description>Returns all customers that match the search query.</description>
         </component>

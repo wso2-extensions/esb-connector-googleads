@@ -22,18 +22,22 @@
 <component name="campaign" type="synapse/template">
     <subComponents>
         <component name="campaignBudgets">
+            <displayName>Mutate Campaign Budgets</displayName>
             <file>campaignBudgets.xml</file>
             <description>Creates, updates, or removes campaign budgets. Operation statuses are returned.</description>
         </component>
         <component name="campaignsMutate">
+            <displayName>Mutate Campaign</displayName>
             <file>campaignsMutate.xml</file>
             <description>Creates, updates, or removes campaigns. Operation statuses are returned.</description>
         </component>
         <component name="campaignCriteriaMutate">
+            <displayName>Mutate Campaign Criteria</displayName>
             <file>campaignCriteriaMutate.xml</file>
             <description>Creates, updates, or removes criteria. Operation statuses are returned.</description>
         </component>
         <component name="getCampaigns">
+            <displayName>Get Campaigns</displayName>
             <file>getCampaigns.xml</file>
             <description>Returns all campaigns that match the search query.</description>
         </component>

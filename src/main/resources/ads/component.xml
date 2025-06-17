@@ -22,14 +22,17 @@
 <component name="ads" type="synapse/template">
     <subComponents>
         <component name="adGroupAdsMutate">
+            <displayName>Mutate Ads</displayName>
             <file>adGroupAdsMutate.xml</file>
             <description>Creates, updates, or removes ads. Operation statuses are returned.</description>
         </component>
         <component name="adGroupsMutate">
+            <displayName>Mutate Ad Groups</displayName>
             <file>adGroupsMutate.xml</file>
             <description>Creates, updates, or removes ad groups. Operation statuses are returned.</description>
         </component>
         <component name="adsMutate">
+            <displayName>Updates ads</displayName>
             <file>adsMutate.xml</file>
             <description>Updates ads. Operation statuses are returned. Updating ads is not supported for TextAd,
                 ExpandedDynamicSearchAd, GmailAd and ImageAd.
