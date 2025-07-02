@@ -1,0 +1,155 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Response Schema for the Customers Mutate operation of GoogleAds",
+  "description": "Schema representing the output of the customers mutate operation in GoogleAds API",
+  "properties": {
+    "payload": {
+      "description": "Response for the `customersMutate` method.",
+      "type": "object",
+      "properties": {
+        "results": {
+          "description": "All results for the mutate.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "resourceName": {
+                "description": "The resource name of the customer that was mutated.",
+                "type": "string"
+              },
+              "customer": {
+                "description": "The customer that was mutated.",
+                "type": "object",
+                "properties": {
+                  "resourceName": {
+                    "description": "The resource name of the customer.",
+                    "type": "string"
+                  },
+                  "id": {
+                    "description": "The unique identifier for the customer.",
+                    "type": "string"
+                  },
+                  "status": {
+                    "description": "The status of the customer.",
+                    "type": "string"
+                  },
+                  "descriptiveName": {
+                    "description": "The name of the customer.",
+                    "type": "string"
+                  },
+                  "email": {
+                    "description": "The email address of the customer.",
+                    "type": "string"
+                  },
+                  "videoBrandSafetySuitability": {
+                    "description": "The video brand safety suitability of the customer.",
+                    "type": "string"
+                  },
+                  "currencyCode": {
+                    "description": "The currency code of the customer.",
+                    "type": "string"
+                  },
+                  "timeZone": {
+                    "description": "The time zone of the customer.",
+                    "type": "string"
+                  },
+                  "trackingUrlTemplate": {
+                    "description": "The tracking URL template for the customer.",
+                    "type": "string"
+                  },
+                  "finalUrlSuffix": {
+                    "description": "The final URL suffix for the customer.",
+                    "type": "string"
+                  },
+                  "autoTaggingEnabled": {
+                    "description": "Indicates whether auto-tagging is enabled for the customer.",
+                    "type": "boolean"
+                  },
+                  "hasPartnersBadge": {
+                    "description": "Indicates whether the customer has a partners badge.",
+                    "type": "boolean"
+                  },
+                  "manager": {
+                    "description": "The manager of the customer.",
+                    "type": "boolean",
+                  },
+                  "testAccount": {
+                    "description": "Indicates whether the customer is a test account.",
+                    "type": "boolean"
+                  },
+                  "optimizationScore": {
+                    "description": "The optimization score of the customer.",
+                    "type": "number"
+                  },
+                  "locationAssetAutoMigrationDone": {
+                    "description": "Indicates whether location asset auto-migration is done for the customer.",
+                    "type": "boolean"
+                  },
+                  "imageAssetAutoMigrationDone": {
+                    "description": "Indicates whether image asset auto-migration is done for the customer.",
+                    "type": "boolean"
+                  },
+                  "locationAssetAutoMigrationDoneDateTime": {
+                    "description": "The date and time when location asset auto-migration was done for the customer.",
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "imageAssetAutoMigrationDoneDateTime": {
+                      "description": "The date and time when image asset auto-migration was done for the customer.",
+                      "type": "string",
+                      "format": "date-time"
+                  },
+                  "localServicesSettings": {
+                    "description": "Settings related to local services for the customer.",
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "customerAgreementSetting": {
+                    "description": "Settings related to customer agreements.",
+                    "type": "object",
+                    "properties": {
+                      "customerAgreement": {
+                        "description": "The customer agreement associated with the customer.",
+                        "type": "object",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  "callReportingSetting": {
+                    "description": "Settings related to call reporting for the customer.",
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "optimizationScoreWeight": {
+                    "description": "The weight of the optimization score for the customer.",
+                    "type": "number"
+                  },
+                  "payPerConversionEligibilityFailureReasons": {
+                    "description": "Reasons for the failure of pay-per-conversion eligibility.",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "attributes": {
+      "description": "Metadata about the operation.",
+      "properties": {
+        "statusCode": {
+          "description": "HTTP status code of the API response."
+        }
+      }
+    },
+    "headers": {
+      "description": "HTTP headers of the API response.",
+      "properties": {}
+    }
+  }
+}

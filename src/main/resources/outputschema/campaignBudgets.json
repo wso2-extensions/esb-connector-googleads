@@ -1,0 +1,102 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Response Schema for the Campaign Budgets operation of GoogleAds",
+  "description": "Schema representing the output of the campaign budgets operation in GoogleAds API",
+  "properties": {
+    "payload": {
+      "description": "Response for the `campaignBudgets` method.",
+      "type": "object",
+      "properties": {
+        "partialFailureError": {
+          "description": "Errors that pertain to operation failures in the partial failure mode.",
+          "type": "object",
+          "properties": {}
+        },
+        "results": {
+          "description": "All results for the mutate.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "resourceName": {
+                "description": "The resource name of the operation.",
+                "type": "string"
+              },
+              "campaignBudget": {
+                "description": "The campaign budget that was created or updated.",
+                "type": "object",
+                "properties": {
+                  "resourceName": {
+                    "description": "The resource name of the campaign budget.",
+                    "type": "string"
+                  },
+                  "status": {
+                    "description": "The status of the campaign budget.",
+                    "type": "string"
+                  },
+                  "deliveryMethod": {
+                    "description": "The delivery method of the campaign budget.",
+                    "type": "string"
+                  },
+                  "period": {
+                    "description": "The period of the campaign budget.",
+                    "type": "string"
+                  },
+                  "type": {
+                    "description": "The type of the campaign budget.",
+                    "type": "string"
+                  },
+                  "alignedBiddingStrategyId": {
+                    "description": "The ID of the bidding strategy aligned with the campaign budget.",
+                    "type": "string"
+                  },
+                  "id": {
+                    "description": "The unique ID of the campaign budget.",
+                    "type": "string"
+                  },
+                  "name": {
+                    "description": "The name of the campaign budget.",
+                    "type": "string"
+                  },
+                  "amountMicros": {
+                    "description": "The amount of the budget.",
+                    "type": "integer"
+                  },
+                  "totalAmountMicros": {
+                    "description": "The lifetime amount of the budget.",
+                    "type": "integer"
+                  },
+                  "explicitlyShared": {
+                    "description": "Indicates whether the budget is explicitly shared.",
+                    "type": "boolean"
+                  },
+                  "referenceCount": {
+                    "description": "The number of campaigns that reference this budget.",
+                    "type": "string"
+                  },
+                  "hasRecommendedBudget": {
+                    "description": "Indicates whether the budget has a recommended amount.",
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "attributes": {
+      "description": "Metadata about the operation.",
+      "properties": {
+        "statusCode": {
+          "description": "HTTP status code of the API response."
+        }
+      }
+    },
+    "headers": {
+      "description": "HTTP headers of the API response.",
+      "properties": {}
+    }
+  }
+}

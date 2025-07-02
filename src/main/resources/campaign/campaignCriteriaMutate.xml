@@ -19,42 +19,43 @@
 
 <!-- Generated on 23-Fri, 08, 2024 16:11:19+0530 -->
 
-<template xmlns="http://ws.apache.org/ns/synapse" name="createCustomerClient">
+<template xmlns="http://ws.apache.org/ns/synapse" name="campaignCriteriaMutate">
     <!-- Path Parameter List -->
-    <parameter name="customerId"
-               description="Required. The ID of the Manager under whom client customer is being created."/>
+    <parameter name="customerId" description="Required. The ID of the customer whose criteria are being modified."/>
     <!-- Request Body Parameter List -->
-    <parameter name="customerClient"
-               description="Required. The new client customer to create. The resource name on this customer will be ignored."/>
-    <parameter name="accessRole"
-               description="The proposed role of user on the created client customer. Accessible only to customers on the allow-list."/>
+    <parameter name="operations"
+               description="Required. The list of operations to perform on individual criteria. Type: object (CampaignCriterionOperation)"/>
+    <parameter name="partialFailure"
+               description="If true, successful operations will be carried out and invalid operations will return errors. If false, all operations will be carried out in one transaction if and only if they are all valid. Default is false."/>
     <parameter name="validateOnly"
                description="If true, the request is validated but not executed. Only errors are returned, not results."/>
-    <parameter name="emailAddress"
-               description="Email address of the user who should be invited on the created client customer. Accessible only to customers on the allow-list."/>
+    <parameter name="responseContentType"
+               description="The response content type setting. Determines whether the mutable resource or just the resource name should be returned post mutation."/>
+    <parameter name="responseVariable" description="Name of the variable to store operation output"/>
+    <parameter name="overwriteBody" description="Replace Message Body with operation output"/>
     <sequence>
         <class name="org.wso2.carbon.google.ads.connector.RestURLBuilder">
-            <property name="operationPath" value="/v17/customers/{customerId}:createCustomerClient"/>
+            <property name="operationPath" value="/customers/{customerId}/campaignCriteria:mutate"/>
             <property name="pathParameters" value="customerId,"/>
         </class>
         <payloadFactory media-type="json" template-type="freemarker">
             <format>
                 <![CDATA[{
                                                                                         <#if (args.arg1)?has_content>
-                                    "customerClient": ${args.arg1},                                </#if>
+                                    "operations": ${args.arg1},                                </#if>
                                                                                             <#if (args.arg2)?has_content>
-                                    "accessRole": "${args.arg2}",                                </#if>
+                                    "partialFailure": "${args.arg2}",                                </#if>
                                                                                             <#if (args.arg3)?has_content>
                                     "validateOnly": "${args.arg3}",                                </#if>
                                                                                             <#if (args.arg4)?has_content>
-                                    "emailAddress": "${args.arg4}"                               </#if>
+                                    "responseContentType": "${args.arg4}"                                </#if>
                                                                                         }]]>
             </format>
             <args>
-                <arg evaluator="xml" expression="$func:customerClient"/>
-                <arg evaluator="xml" expression="$func:accessRole"/>
+                <arg evaluator="xml" expression="$func:operations"/>
+                <arg evaluator="xml" expression="$func:partialFailure"/>
                 <arg evaluator="xml" expression="$func:validateOnly"/>
-                <arg evaluator="xml" expression="$func:emailAddress"/>
+                <arg evaluator="xml" expression="$func:responseContentType"/>
             </args>
         </payloadFactory>
         <property name="DISABLE_CHUNKING" scope="axis2" type="STRING" value="true"/>

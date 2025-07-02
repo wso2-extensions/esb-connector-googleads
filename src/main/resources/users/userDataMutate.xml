@@ -31,9 +31,11 @@
     <parameter name="operationType" description="The operation to be performed on the user list."/>
     <parameter name="userIdentifierSource" description="The source of the user identifier."/>
     <parameter name="jsonArrayContent" description="User data in JSON array format."/>
+    <parameter name="responseVariable" description="Name of the variable to store operation output"/>
+    <parameter name="overwriteBody" description="Replace Message Body with operation output"/>
     <sequence>
         <class name="org.wso2.carbon.google.ads.connector.RestURLBuilder">
-            <property name="operationPath" value="/v17/customers/{customerId}:uploadUserData"/>
+            <property name="operationPath" value="/customers/{customerId}:uploadUserData"/>
             <property name="pathParameters" value="customerId,"/>
         </class>
         <filter regex="JSON_ARRAY" source="$func:inputStructure">

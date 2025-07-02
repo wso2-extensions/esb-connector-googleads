@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Response Schema for the Ads Mutate Operation of GoogleAds",
+  "description": "Schema representing the output of the ads mutate operation in GoogleAds API",
+  "properties": {
+    "payload": {
+      "description": "Response for the `adsMutate` method.",
+      "type": "object",
+      "properties": {
+        "partialFailureError": {
+          "description": "Errors that pertain to operation failures in the partial failure mode.",
+          "type": "object",
+          "properties": {}
+        },
+        "results": {
+          "description": "All results for the mutate.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "resourceName": {
+                "description": "The resource name of the ad.",
+                "type": "string"
+              },
+              "ad": {
+                "description": "The mutated ad with only mutable fields after mutate.",
+                "type": "object",
+                "properties": {
+                  "resourceName": {
+                    "description": "The resource name of the ad.",
+                    "type": "string"
+                  },
+                  "finalUrls": {
+                    "description": "Final URLs for the ad.",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "finalMobileUrls": {
+                    "description": "Final mobile URLs for the ad.",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "urlCustomParameters": {
+                    "description": "Tracking template for the ad.",
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "type": {
+                    "description": "The type of ad.",
+                    "type": "string"
+                  },
+                  "devicePreference": {
+                    "description": "The device preference for the ad.",
+                    "type": "string"
+                  },
+                  "urlCollections": {
+                    "description": "URL collections for the ad.",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "id": {
+                    "description": "The ID of the ad.",
+                    "type": "string"
+                  },
+                  "name": {
+                    "description": "The name of the ad.",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "attributes": {
+      "description": "Metadata about the operation.",
+      "properties": {
+        "statusCode": {
+          "description": "HTTP status code of the API response."
+        }
+      }
+    },
+    "headers": {
+      "description": "HTTP headers of the API response.",
+      "properties": {}
+    }
+  }
+}
