@@ -18,6 +18,1086 @@
             ],
             "operations": [
                 {
+                    "name": "customAudiencesMutate",
+                    "description": "Customers Custom Audiences Mutate",
+                    "params": [
+                        {
+                            "name": "search",
+                            "type": "searchBox",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Search for an attribute using the display name"
+                        },
+                        {
+                            "name": "customerId",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The ID of the customer whose custom audiences are being modified. E.g., 1234567890"
+                        },
+                        {
+                            "name": "operations",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The list of operations to perform on individual custom audiences."
+                        },
+                        {
+                            "name": "validateOnly",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "If true, the request is validated but not executed. Only errors are returned, not results."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "getUserLists",
+                    "description": "List down all User Lists",
+                    "params": [
+                        {
+                            "name": "customerId",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The ID of the customer being queried. E.g., 1234567890"
+                        },
+                        {
+                            "name": "userListName",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Filter by UserList Name."
+                        },
+                        {
+                            "name": "pageToken",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Token of the page to retrieve. If not specified, the first page of results will be returned. Use the value obtained from next Page Token in the previous response in order to request the next page of results."
+                        },
+                        {
+                            "name": "pageSize",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Number of elements to retrieve in a single page. When too large a page is requested, the server may decide to further limit the number of returned resources."
+                        },
+                        {
+                            "name": "validateOnly",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "If true, the request is validated but not executed."
+                        },
+                        {
+                            "name": "returnTotalResultsCount",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "If true, the total number of results that match the query ignoring the LIMIT clause will be included in the response. Default is false."
+                        },
+                        {
+                            "name": "summaryRowSetting",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Determines whether a summary row will be returned. By default, summary row is not returned. If requested, the summary row will be sent in a response by itself after all other query results are returned."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "userDataMutate",
+                    "description": "Customers Create/Remove User Data",
+                    "params": [
+                        {
+                            "name": "customerId",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Required. The ID of the customer for which to update the user data. E.g., 1234567890"
+                        },
+                        {
+                            "name": "userListId",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Required. The list id of the user list to add or remove users from."
+                        },
+                        {
+                            "name": "inputStructure",
+                            "type": "comboOrExpression",
+                            "required": true,
+                            "defaultValue": "JSON_ARRAY",
+                            "description": "The type of input data structure."
+                        },
+                        {
+                            "name": "operations",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Import the user data and operations to be performed as a JSON object."
+                        },
+                        {
+                            "name": "jsonArrayContent",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "User data to be uploaded."
+                        },
+                        {
+                            "name": "operationType",
+                            "type": "comboOrExpression",
+                            "required": true,
+                            "defaultValue": "create",
+                            "description": "The operation to be performed on the user list."
+                        },
+                        {
+                            "name": "userIdentifierSource",
+                            "type": "comboOrExpression",
+                            "required": true,
+                            "defaultValue": "UNSPECIFIED",
+                            "description": "The source of the user identifiers."
+                        },
+                        {
+                            "name": "transactionAttributes",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The transaction attributes for the user data to be uploaded."
+                        },
+                        {
+                            "name": "userAttributes",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The user attributes for the user data to be uploaded."
+                        },
+                        {
+                            "name": "consent",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The consent for the user data to be uploaded."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "campaignsMutate",
+                    "description": "Customers Campaigns Mutate",
+                    "params": [
+                        {
+                            "name": "search",
+                            "type": "searchBox",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Search for an attribute using the display name"
+                        },
+                        {
+                            "name": "customerId",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The ID of the customer whose campaigns are being modified. E.g., 1234567890"
+                        },
+                        {
+                            "name": "operations",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The list of operations to perform on individual campaigns."
+                        },
+                        {
+                            "name": "partialFailure",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "If true, successful operations will be carried out and invalid operations will return errors. If false, all operations will be carried out in one transaction if and only if they are all valid. Default is false."
+                        },
+                        {
+                            "name": "validateOnly",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "If true, the request is validated but not executed. Only errors are returned, not results."
+                        },
+                        {
+                            "name": "responseContentType",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The response content type setting. Determines whether the mutable resource or just the resource name should be returned post mutation."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "campaignCriteriaMutate",
+                    "description": "Customers Campaign Criteria Mutate",
+                    "params": [
+                        {
+                            "name": "search",
+                            "type": "searchBox",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Search for an attribute using the display name"
+                        },
+                        {
+                            "name": "customerId",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The ID of the customer whose criteria are being modified. E.g., 1234567890"
+                        },
+                        {
+                            "name": "operations",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The list of operations to perform on individual criteria."
+                        },
+                        {
+                            "name": "partialFailure",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "If true, successful operations will be carried out and invalid operations will return errors. If false, all operations will be carried out in one transaction if and only if they are all valid. Default is false."
+                        },
+                        {
+                            "name": "validateOnly",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "If true, the request is validated but not executed. Only errors are returned, not results."
+                        },
+                        {
+                            "name": "responseContentType",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The response content type setting. Determines whether the mutable resource or just the resource name should be returned post mutation."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "audiencesMutate",
+                    "description": "Customers Audiences Mutate",
+                    "params": [
+                        {
+                            "name": "search",
+                            "type": "searchBox",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Search for an attribute using the display name"
+                        },
+                        {
+                            "name": "customerId",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The ID of the customer whose audiences are being modified. E.g., 1234567890"
+                        },
+                        {
+                            "name": "operations",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The list of operations to perform on individual audiences."
+                        },
+                        {
+                            "name": "partialFailure",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "If true, successful operations will be carried out and invalid operations will return errors. If false, all operations will be carried out in one transaction if and only if they are all valid. Default is false."
+                        },
+                        {
+                            "name": "validateOnly",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "If true, the request is validated but not executed. Only errors are returned, not results."
+                        },
+                        {
+                            "name": "responseContentType",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The response content type setting. Determines whether the mutable resource or just the resource name should be returned post mutation."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "getCampaigns",
+                    "description": "List down all Campaigns",
+                    "params": [
+                        {
+                            "name": "customerId",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The ID of the customer being queried. E.g., 1234567890"
+                        },
+                        {
+                            "name": "pageToken",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Token of the page to retrieve. If not specified, the first page of results will be returned. Use the value obtained from next Page Token in the previous response in order to request the next page of results."
+                        },
+                        {
+                            "name": "pageSize",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Number of elements to retrieve in a single page. When too large a page is requested, the server may decide to further limit the number of returned resources."
+                        },
+                        {
+                            "name": "validateOnly",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "If true, the request is validated but not executed."
+                        },
+                        {
+                            "name": "returnTotalResultsCount",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "If true, the total number of results that match the query ignoring the LIMIT clause will be included in the response. Default is false."
+                        },
+                        {
+                            "name": "summaryRowSetting",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Determines whether a summary row will be returned. By default, summary row is not returned. If requested, the summary row will be sent in a response by itself after all other query results are returned."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "userListsMutate",
+                    "description": "Customers User Lists Mutate",
+                    "params": [
+                        {
+                            "name": "customerId",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Required. The ID of the customer whose user lists are being modified. E.g., 1234567890"
+                        },
+                        {
+                            "name": "operations",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Required. The list of operations to perform on individual user lists. Type: object (UserListOperation)"
+                        },
+                        {
+                            "name": "partialFailure",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "If true, successful operations will be carried out and invalid operations will return errors. If false, all operations will be carried out in one transaction if and only if they are all valid. Default is false."
+                        },
+                        {
+                            "name": "validateOnly",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "If true, the request is validated but not executed. Only errors are returned, not results."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "customersMutate",
+                    "description": "Customers Mutate",
+                    "params": [
+                        {
+                            "name": "search",
+                            "type": "searchBox",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Search for an attribute using the display name"
+                        },
+                        {
+                            "name": "customerId",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The ID of the customer being modified. E.g., 1234567890"
+                        },
+                        {
+                            "name": "operation",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The operation to perform on the customer."
+                        },
+                        {
+                            "name": "validateOnly",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "If true, the request is validated but not executed. Only errors are returned, not results."
+                        },
+                        {
+                            "name": "responseContentType",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The response content type setting. Determines whether the mutable resource or just the resource name should be returned post mutation."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "adGroupsMutate",
+                    "description": "Ad Groups Mutate",
+                    "params": [
+                        {
+                            "name": "customerId",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The ID of the customer whose ad groups are being modified. E.g., 1234567890"
+                        },
+                        {
+                            "name": "operations",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The list of operations to perform on individual ad groups."
+                        },
+                        {
+                            "name": "partialFailure",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "If true, successful operations will be carried out and invalid operations will return errors."
+                        },
+                        {
+                            "name": "validateOnly",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "If true, the request is validated but not executed. Only errors are returned, not results."
+                        },
+                        {
+                            "name": "responseContentType",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The response content type setting. Determines whether the mutable resource or just the resource name should be returned post mutation."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "campaignBudgets",
+                    "description": "Customers Campaign Budgets Mutate",
+                    "params": [
+                        {
+                            "name": "search",
+                            "type": "searchBox",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Search for an attribute using the display name"
+                        },
+                        {
+                            "name": "customerId",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The ID of the customer whose campaign budgets are being modified. E.g., 1234567890"
+                        },
+                        {
+                            "name": "operations",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The list of operations to perform on individual campaign budgets."
+                        },
+                        {
+                            "name": "partialFailure",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "If true, successful operations will be carried out and invalid operations will return errors. If false, all operations will be carried out in one transaction if and only if they are all valid. Default is false."
+                        },
+                        {
+                            "name": "validateOnly",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "If true, the request is validated but not executed. Only errors are returned, not results."
+                        },
+                        {
+                            "name": "responseContentType",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The response content type setting. Determines whether the mutable resource or just the resource name should be returned post mutation."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "search",
+                    "description": "Customers Google Ads Search",
+                    "params": [
+                        {
+                            "name": "search",
+                            "type": "searchBox",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Search for an attribute using the display name"
+                        },
+                        {
+                            "name": "customerId",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The ID of the customer being queried. E.g., 1234567890"
+                        },
+                        {
+                            "name": "query",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The query string."
+                        },
+                        {
+                            "name": "pageToken",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Token of the page to retrieve. If not specified, the first page of results will be returned. Use the value obtained from next Page Token in the previous response in order to request the next page of results."
+                        },
+                        {
+                            "name": "pageSize",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Number of elements to retrieve in a single page. When too large a page is requested, the server may decide to further limit the number of returned resources."
+                        },
+                        {
+                            "name": "validateOnly",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "If true, the request is validated but not executed."
+                        },
+                        {
+                            "name": "returnTotalResultsCount",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "If true, the total number of results that match the query ignoring the LIMIT clause will be included in the response. Default is false."
+                        },
+                        {
+                            "name": "summaryRowSetting",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Determines whether a summary row will be returned. By default, summary row is not returned. If requested, the summary row will be sent in a response by itself after all other query results are returned."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "adGroupAdsMutate",
+                    "description": "Ad Group Ads Mutate",
+                    "params": [
+                        {
+                            "name": "customerId",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The ID of the customer whose ads are being modified. E.g., 1234567890"
+                        },
+                        {
+                            "name": "operations",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The list of operations to perform on individual ads."
+                        },
+                        {
+                            "name": "partialFailure",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "If true, successful operations will be carried out and invalid operations will return errors."
+                        },
+                        {
+                            "name": "validateOnly",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "If true, the request is validated but not executed. Only errors are returned, not results."
+                        },
+                        {
+                            "name": "responseContentType",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The response content type setting. Determines whether the mutable resource or just the resource name should be returned post mutation."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "adsMutate",
+                    "description": "Ads Mutate",
+                    "params": [
+                        {
+                            "name": "customerId",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The ID of the customer whose ads are being modified. E.g., 1234567890"
+                        },
+                        {
+                            "name": "operations",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The list of operations to perform on individual ads."
+                        },
+                        {
+                            "name": "partialFailure",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "If true, successful operations will be carried out and invalid operations will return errors."
+                        },
+                        {
+                            "name": "validateOnly",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "If true, the request is validated but not executed. Only errors are returned, not results."
+                        },
+                        {
+                            "name": "responseContentType",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The response content type setting. Determines whether the mutable resource or just the resource name should be returned post mutation."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "createCustomerClient",
+                    "description": "Customers Create Customer Client",
+                    "params": [
+                        {
+                            "name": "search",
+                            "type": "searchBox",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Search for an attribute using the display name"
+                        },
+                        {
+                            "name": "customerId",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The ID of the Manager under whom client customer is being created. E.g., 1234567890"
+                        },
+                        {
+                            "name": "customerClient",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The new client customer to create. The resource name on this customer will be ignored."
+                        },
+                        {
+                            "name": "accessRole",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The proposed role of user on the created client customer. Accessible only to customers on the allow-list."
+                        },
+                        {
+                            "name": "validateOnly",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "If true, the request is validated but not executed. Only errors are returned, not results."
+                        },
+                        {
+                            "name": "emailAddress",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Email address of the user who should be invited on the created client customer. Accessible only to customers on the allow-list."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "getCustomers",
+                    "description": "List down all Customers",
+                    "params": [
+                        {
+                            "name": "customerId",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The ID of the customer being queried. E.g., 1234567890"
+                        },
+                        {
+                            "name": "pageToken",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Token of the page to retrieve. If not specified, the first page of results will be returned. Use the value obtained from next Page Token in the previous response in order to request the next page of results."
+                        },
+                        {
+                            "name": "pageSize",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Number of elements to retrieve in a single page. When too large a page is requested, the server may decide to further limit the number of returned resources."
+                        },
+                        {
+                            "name": "validateOnly",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "If true, the request is validated but not executed."
+                        },
+                        {
+                            "name": "returnTotalResultsCount",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "If true, the total number of results that match the query ignoring the LIMIT clause will be included in the response. Default is false."
+                        },
+                        {
+                            "name": "summaryRowSetting",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Determines whether a summary row will be returned. By default, summary row is not returned. If requested, the summary row will be sent in a response by itself after all other query results are returned."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                }
+            ],
+            "connections": [
+                {
+                    "name": "googleAds",
+                    "description": "Google Ads Connection",
+                    "params": [
+                        {
+                            "name": "connectionName",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "GOOGLE_AD_NETWORK_CONNECTION_1",
+                            "description": "The name for the Google Ads connection."
+                        },
+                        {
+                            "name": "clientId",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Client ID of the registered application."
+                        },
+                        {
+                            "name": "clientSecret",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Client secret of the registered application."
+                        },
+                        {
+                            "name": "refreshToken",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The refresh token that can be used to obtain a new access token."
+                        },
+                        {
+                            "name": "base",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "https://googleads.googleapis.com",
+                            "description": "The service root URL."
+                        },
+                        {
+                            "name": "apiVersion",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "v18",
+                            "description": "API Version used to connect with the mail server"
+                        },
+                        {
+                            "name": "developerToken",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The developer token for the Google Ads connection."
+                        },
+                        {
+                            "name": "loginCustomerId",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The ID of the Manager Account. Required when using a manager account to access an customer account. E.g., 1234567890"
+                        },
+                        {
+                            "name": "tokenEndpoint",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "https://www.googleapis.com/oauth2/v3/token",
+                            "description": "An HTTP endpoint that can be uses to obtain an access token."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "tagName": "v2.0.0",
+            "products": [
+                "MI 4.4.0"
+            ],
+            "operations": [
+                {
                     "name": "init",
                     "description": "Config operation",
                     "isHidden": true
